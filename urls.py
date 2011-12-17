@@ -1,8 +1,5 @@
 from django.conf.urls.defaults import include, patterns, url
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
 from django.contrib import admin
 admin.autodiscover()
 
@@ -26,4 +23,5 @@ urlpatterns = patterns('',
     (r'', include('finder.urls')),
 )
 
-urlpatterns += staticfiles_urlpatterns()
+if settings.DEBUG:
+    urlpatterns += staticfiles_urlpatterns()
