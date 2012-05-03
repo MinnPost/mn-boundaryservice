@@ -1,8 +1,7 @@
 *.pyc
 *.swp
 .DS_Store
-build
-venv
+boundaryservice
 settings_override.py
 /static
 definitions.py
