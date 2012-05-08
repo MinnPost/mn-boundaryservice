@@ -161,6 +161,60 @@ CACHES = {
     }
 }
 
+# Demo and site text values
+EXAMPLE_SCOPE = 'Minnesota'
+
+# Example boundary set values.
+EXAMPLE_BOUNDARY_SET = 'Minnesota State House district'
+EXAMPLE_BOUNDARY_SETS = 'Minnesota State House districts' # plural
+EXAMPLE_BOUNDARY_SET_CODE = 'minnesota-state-house-districts'
+EXAMPLE_BOUNDARY_SET_CODE_BIS = 'minnesota-state-house-districts-2002' # "bis" is latin for "again"
+EXAMPLE_BOUNDARY_SET_RESPONSE = '''
+{
+  authority: "Minnesota GIS",
+  boundaries: [ .. ],
+  count: 134,
+  domain: "Minnesota",
+  href: "http://www.gis.leg.mn/redist2010/plans.html",
+  last_updated: "2012-05-03",
+  metadata_fields: [ .. ],
+  name: "Minnesota State House districts",
+  notes: "These districts were defined in 2012.",
+  resource_uri: "/1.0/boundary-set/minnesota-state-house-districts/",
+  slug: "minnesota-state-house-districts"
+}
+''' # an example JSON response
+
+# Example boundary (within a boundary set)
+EXAMPLE_BOUNDARY = 'Congressional district 4'
+EXAMPLE_BOUNDARY_CODE = '4-congressional-district'
+EXAMPLE_BOUNDARY_RESPONSE = '''
+{
+  centroid: {
+    coordinates: [
+      -92.9809341315504,
+      45.00196132245185
+    ],
+    type: "Point"
+  },
+  external_id: "180077",
+  kind: "Congressional district",
+  metadata: { .. },
+  name: "4",
+  resource_uri: "/1.0/boundary/4-congressional-district/",
+  set: "/1.0/boundary-set/congressional-districts/",
+  simple_shape: { .. },
+  slug: "4-congressional-district"
+}
+''' # an example JSON response
+
+# Example place
+EXAMPLE_PLACE = 'Example Place'
+EXAMPLE_PLACE_LAT_LNG = '44.954155,-93.1038669999999'
+EXAMPLE_UNIT = 'kilometre'
+EXAMPLE_UNIT_CODE = 'km'
+
+
 try:
     from settings_override import *
 except ImportError:
