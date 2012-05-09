@@ -3,3 +3,4 @@ psycopg2==2.4.1
 django_compressor==1.1
 geopy==0.94.2
 django-boundaryservice>=0.1.11
+gunicorn>=0.14
