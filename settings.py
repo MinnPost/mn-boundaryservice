@@ -216,6 +216,10 @@ EXAMPLE_UNIT = 'kilometre'
 EXAMPLE_UNIT_CODE = 'km'
 
 
+# Analytics
+ENABLE_GOOGLE_ANALYTICS = True
+GOOGLE_ANALYTICS_KEY = "UA-XXXXXX-1"
+
 try:
     from settings_override import *
 except ImportError:
