@@ -1,4 +1,10 @@
 #! /bin/bash
+###
+# Startup script for MN Boundary service.
+#
+#
+###
+
 set -e
 LOGFILE=/var/log/gunicorn/boundaryservice.log
 LOGDIR=$(dirname $LOGFILE)
