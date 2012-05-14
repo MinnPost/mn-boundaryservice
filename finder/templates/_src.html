@@ -1,9 +1,13 @@
 <h3>Build your own boundary service!</h3>
 
-<p>The source code for this Boundary Service instance is hosted on GitHub. You are welcome to copy, modify and reuse it as you see fit. We are also very happy to accept bug reports and patches!</p>
+<p>The source code for {{ settings.EXAMPLE_SCOPE }} Boundaries is open source; you are welcome to copy, modify and reuse it as you see fit. We are also very happy to accept bug reports and patches!</p>
 
+{% if settings.FORKED_REPO %}
+<p>The code for {{ settings.EXAMPLE_SCOPE }} Boundaries can be found at <a href="{{ settings.FORKED_REPO_URL }}" target="_blank">{{ settings.FORKED_REPO }}</a>, which was forked from <a href="https://github.com/opennorth/blank-boundaryservice" target="_blank">github.com/opennorth/blank-boundaryservice</a>.</p>
+{% else %}
 <p><a href="https://github.com/opennorth/blank-boundaryservice" target="_blank"><code>https://github.com/opennorth/blank-boundaryservice</code></a></p>
+{% endif %}
 
 <h3>License</h3>
 
-<p>All source and assets are licensed under the permissive MIT license.</p>
+<p>All source and assets are licensed under the permissive MIT license, unless otherwise noted.  Boundary data is licensed by their respective sources.</p>
