@@ -1,8 +1,12 @@
 <h3>About</h3>
 
-<p>The Boundary Service software is a product of the <a href="http://blog.apps.chicagotribune.com/">News Applications team</a> at the <a href="http://www.chicagotribune.com">Chicago Tribune</a>.
+{% if settings.ABOUT_HTML %}
+    {{ settings.ABOUT_HTML|safe }}
+{% else %}
+<p>{{ settings.EXAMPLE_SCOPE }} Boundaries is based on software created by the <a target="_blank" href="http://blog.apps.chicagotribune.com/">News Applications team</a> at the <a target="_blank" href="http://www.chicagotribune.com">Chicago Tribune</a>.
 
 <p>This API is provided as a free service for the community.</p>
+{% endif %}
 
 <h3>Open Data</h3>
 
