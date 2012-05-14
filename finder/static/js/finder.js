@@ -1,10 +1,30 @@
+var finder_settings = finder_settings || {};
 var geolocate_supported = true; // until prove false
-
 var geocoder = new google.maps.Geocoder();
-var southwest_limit = new L.LatLng(32.1342, -95.6219); // @todo Replace coordinates.
-var northeast_limit = new L.LatLng(32.6871, -94.9844); // @todo Replace coordinates.
+
+if (typeof finder_settings.EXAMPLE_PLACE_BBOX != 'undefined') {
+    var bounds = finder_settings.EXAMPLE_PLACE_BBOX.split(',');
+    var southwest_limit = new L.LatLng(bounds[0], bounds[1]);
+    var northeast_limit = new L.LatLng(bounds[2], bounds[3]);
+}
+else {
+    var southwest_limit = new L.LatLng(32.1342, -95.6219);
+    var northeast_limit = new L.LatLng(32.6871, -94.9844);
+}
 var bounding_box = new L.LatLngBounds(southwest_limit, northeast_limit);
 var outside = false; // until prove true
+
+if (typeof finder_settings.EXAMPLE_PLACE_LAT_LNG != 'undefined') {
+    var default_latlon = finder_settings.EXAMPLE_PLACE_LAT_LNG.split(',');
+    var default_lat = parseFloat(default_latlon[0]);
+    var default_lon = parseFloat(default_latlon[1]);
+}
+else {
+    var default_lat = 32.349549;
+    var default_lon = -95.301829;
+}
+
+var place = (typeof finder_settings.EXAMPLE_PLACE != 'undefined') ? finder_settings.EXAMPLE_PLACE : 'Example Place';
 
 var map = null;
 
@@ -85,7 +105,7 @@ function geolocate() {
     } else {
         use_default_location();
 
-        $('#resultinfo').html("Your browser does not support automatically determining your location so we're showing you Example Place."); // @todo Replace "Example Place"
+        $('#resultinfo').html("Your browser does not support determining your location, so we're showing" + place + ".");
 
         geolocate_supported = false;
     }
@@ -353,7 +373,7 @@ function use_current_location() {
 }
 
 function use_default_location() {
-    process_location(32.349549, -95.301829); // @todo Replace coordinates.
+    process_location(default_lat, default_lon);
 }
 
 function toggle_alt_addresses() {
