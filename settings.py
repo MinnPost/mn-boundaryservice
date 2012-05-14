@@ -215,10 +215,13 @@ EXAMPLE_PLACE_BBOX = '43.499356,-97.239209,49.384358,-89.489226'
 EXAMPLE_UNIT = 'kilometre'
 EXAMPLE_UNIT_CODE = 'km'
 
-
 # Analytics
 ENABLE_GOOGLE_ANALYTICS = True
-GOOGLE_ANALYTICS_KEY = "UA-XXXXXX-1"
+GOOGLE_ANALYTICS_KEY = 'UA-3385191-1'
+
+# Code for source page
+FORKED_REPO = 'github.com/MinnPost/mn-boundaryservice'
+FORKED_REPO_URL = 'https://github.com/MinnPost/mn-boundaryservice'
 
 try:
     from settings_override import *
