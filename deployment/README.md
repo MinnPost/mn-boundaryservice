@@ -4,7 +4,7 @@ These files are used for deployment.
 
 Copy and configure Gunicorn startup script:
 
-``
+```
 cp deployment/gunicorn.startup_sh.example gunicorn.startup_sh;
 chmod +x gunicorn_startup.sh;
 nano gunicorn.startup_sh;
@@ -12,7 +12,7 @@ nano gunicorn.startup_sh;
 
 Copy and configure the Upstart script:
 
-``
+```
 sudo cp deployment/boundaryservice.conf.example /etc/init/boundaryservice.conf;
 sudo nano /etc/init/boundaryservice.conf;
 ```
