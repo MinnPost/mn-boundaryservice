@@ -223,6 +223,11 @@ GOOGLE_ANALYTICS_KEY = 'UA-3385191-1'
 FORKED_REPO = 'github.com/MinnPost/mn-boundaryservice'
 FORKED_REPO_URL = 'https://github.com/MinnPost/mn-boundaryservice'
 
+# About text.  This is inserted as is.
+ABOUT_HTML = '''
+<p>Minnesota Boundaries is a free service provided by <a href="http://minnpost.com" target="_blank">MinnPost</a> and was developed by <a href="http://minnpost.com/data" target="_blank">MinnPost's interactive team</a>.  The application is based on software created by the <a target="_blank" href="http://blog.apps.chicagotribune.com/">News Applications team</a> at the <a target="_blank" href="http://www.chicagotribune.com">Chicago Tribune</a>.</p>
+'''
+
 try:
     from settings_override import *
 except ImportError:
