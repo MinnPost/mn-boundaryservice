@@ -1,0 +1,31 @@
+#! /bin/bash
+###
+# Startup script for MN Boundary service.
+#
+# Copy this file to the application directory:
+# cp deployment/gunicorn.startup_sh.example gunicorn.startup_sh
+#
+# Update variables as needed.
+###
+
+set -e
+
+# Update the following as needed
+LOGFILE=/var/log/gunicorn/boundaryservice.log
+APPDIR=/home/ubuntu/django-projects/mn-boundaryservice
+VIRTENVDIR=boundaryservice/bin
+NUM_WORKERS=3
+USER=ubuntu
+
+# Load virtual environment
+cd $APPDIR
+source $VIRTENVDIR/activate
+
+# Ensure log file is available
+LOGDIR=$(dirname $LOGFILE)
+test -d $LOGDIR || mkdir -p $LOGDIR
+
+# Start gunicorn for django
+exec $VIRTENVDIR/gunicorn_django -w $NUM_WORKERS \
+    --user=$USER --log-level=debug \
+    --log-file=$LOGFILE 2>>$LOGFILE
