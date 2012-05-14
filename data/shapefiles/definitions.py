@@ -34,7 +34,7 @@ SHAPEFILES = {
     },
     'Minnesota State Senate districts (2002)': {
         'file': 'state-senate-districts/2010/tl_2010_27_sldu10/tl_2010_27_sldu10.shp',
-        'singular': 'State Senate district (2002)',
+        'singular': 'Minnesota State Senate district (2002)',
         'kind_first': False,
         'ider': utils.simple_namer(['geoid10']),
         'namer': utils.simple_namer(['sldust10'], normalizer=lambda x: x.lstrip('0')),
@@ -48,7 +48,7 @@ SHAPEFILES = {
     },
     'Minnesota State House districts': {
         'file': 'state-house-districts/2012/L2012/L2012.shp',
-        'singular': 'State House district',
+        'singular': 'Minnesota State House district',
         'kind_first': False,
         'ider': utils.simple_namer(['id']),
         'namer': utils.simple_namer(['district'], normalizer=lambda x: x.lstrip('0')),
@@ -62,7 +62,7 @@ SHAPEFILES = {
     },
     'Minnesota State Senate districts': {
         'file': 'state-senate-districts/2012/S2012/S2012.shp',
-        'singular': 'State Senate district',
+        'singular': 'Minnesota State Senate district',
         'kind_first': False,
         'ider': utils.simple_namer(['id']),
         'namer': utils.simple_namer(['district'], normalizer=lambda x: x.lstrip('0')),
