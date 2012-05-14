@@ -3,7 +3,7 @@
 #
 # Copy and then configure the directory to where the application
 # is:
-# sudo cp deployment/boundaryservice.conf /etc/init/boundaryservice.conf
+# sudo cp deployment/boundaryservice.conf.example /etc/init/boundaryservice.conf
 #
 # Then run with:
 # sudo start boundaryservice

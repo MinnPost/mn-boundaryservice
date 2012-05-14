@@ -2,8 +2,9 @@
 ###
 # Startup script for MN Boundary service.
 #
-# Copy this file to the application directory:
+# Copy this file to the application directory and make executable:
 # cp deployment/gunicorn.startup_sh.example gunicorn.startup_sh
+# chmod +x gunicorn_startup.sh
 #
 # Update variables as needed.
 ###
