@@ -125,7 +125,7 @@ function geolocation_success(position) {
 function geolocation_error() {
     use_default_location();
 
-    $('#resultinfo').html("Your browser does not support automatically determining your location so we're showing you Example Place."); // @todo Replace "Example Place"
+    $('#resultinfo').html("Your browser does not support automatically determining your location so we're showing you" + place + ".");
     stop_loading();
 }
 
