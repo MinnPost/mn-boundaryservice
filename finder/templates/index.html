@@ -42,8 +42,15 @@
     <div id="about-page" class="page-content">
         {% include '_about.html' %}  
     </div>
+
+    {% if settings.FOOTER_HTML %}
+    <div id="footer">
+        {{ settings.FOOTER_HTML|safe }}
+    </div>
+    {% endif %}
 </div>
 {% endblock %}
+
 {% block foot %}
 <script src="//maps.google.com/maps/api/js?sensor=true"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
