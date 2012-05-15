@@ -228,6 +228,11 @@ ABOUT_HTML = '''
 <p>Minnesota Boundaries is a free service provided by <a href="http://minnpost.com" target="_blank">MinnPost</a> and was developed by <a href="http://minnpost.com/data" target="_blank">MinnPost's interactive team</a>.  The application is based on software created by the <a target="_blank" href="http://blog.apps.chicagotribune.com/">News Applications team</a> at the <a target="_blank" href="http://www.chicagotribune.com">Chicago Tribune</a>.</p>
 '''
 
+# Footer text.  This is inserted as is.
+FOOTER_HTML = '''
+<p style="float:right; text-align: right; width: 50%;">Made by &nbsp;<a href="http://minnpost.com" target="_blank" title="MinnPost homepage"><img src="https://s3.amazonaws.com/data.minnpost/icons/minnpost-logos/logo-150x21.png" alt="MinnPost logo" /></a></p>
+'''
+
 try:
     from settings_override import *
 except ImportError:
