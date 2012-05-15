@@ -209,7 +209,7 @@ function alt_addresses(results) {
 
 // Use boundary service to lookup what areas the location falls within
 function get_boundaries(lat, lng) {
-    var table_html = '<h3>This location is within:</h3><table id="boundaries" border="0" cellpadding="0" cellspacing="0">';
+    var output = '';
     var query_url = '/1.0/boundary/?limit=100&contains=' + lat + ',' + lng + '';
 
     displayed_kind = null;
@@ -227,21 +227,30 @@ function get_boundaries(lat, lng) {
     boundaries.length = 0;
 
     $.getJSON(query_url, function(data) {
-        $.each(data.objects, function(i, obj) {
-            boundaries[obj.slug] = obj;
-            table_html += '<tr id="' + obj.slug + '"><td>' + obj.kind + '</td><td><strong><a href="javascript:display_boundary(\'' + obj.slug + '\');">' + obj.name + '</a></strong></td></td>';
-
-            // Try to display a new polygon of the same kind as the last shown
-            if (displayed_kind != null && obj.kind == displayed_kind) {
-                for_display = obj; 
-            }
-        });
-        table_html += '</table>';
-        $('#area-lookup').html(table_html);
-
-        if (for_display != null) {
-            display_boundary(for_display.slug, true);
+        // Check for results
+        if (typeof data.meta != 'undefined' && data.meta.total_count > 0) {
+          output += '<h3>This location is within:</h3><table id="boundaries" border="0" cellpadding="0" cellspacing="0">';
+        
+          $.each(data.objects, function(i, obj) {
+              boundaries[obj.slug] = obj;
+              output += '<tr id="' + obj.slug + '"><td>' + obj.kind + '</td><td><strong><a href="javascript:display_boundary(\'' + obj.slug + '\');">' + obj.name + '</a></strong></td></td>';
+  
+              // Try to display a new polygon of the same kind as the last shown
+              if (displayed_kind != null && obj.kind == displayed_kind) {
+                  for_display = obj; 
+              }
+          });
+          output += '</table>';
+  
+          if (for_display != null) {
+              display_boundary(for_display.slug, true);
+          }
         }
+        else {
+          output += '<h3>No results found.</h3>';
+        }
+        
+        $('#area-lookup').html(output);
         stop_loading();
     });
 }
