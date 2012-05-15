@@ -4,8 +4,8 @@ var geocoder = new google.maps.Geocoder();
 
 if (typeof finder_settings.EXAMPLE_PLACE_BBOX != 'undefined') {
     var bounds = finder_settings.EXAMPLE_PLACE_BBOX.split(',');
-    var southwest_limit = new L.LatLng(bounds[0], bounds[1]);
-    var northeast_limit = new L.LatLng(bounds[2], bounds[3]);
+    var southwest_limit = new L.LatLng(parseFloat(bounds[0]), parseFloat(bounds[1]));
+    var northeast_limit = new L.LatLng(parseFloat(bounds[2]), parseFloat(bounds[3]));
 }
 else {
     var southwest_limit = new L.LatLng(32.1342, -95.6219);
@@ -160,9 +160,7 @@ function check_saved_location() {
 }
 
 function check_for_locale(center) {
-    var temp = new L.LatLngBounds(center, center);
-
-    if (!bounding_box.contains(temp) && window.location.hash == "#demo") {
+    if (!bounding_box.contains(center) && window.location.hash == "#demo") {
         show_outside();
         outside = true;
     } else {
