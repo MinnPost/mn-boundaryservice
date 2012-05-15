@@ -76,6 +76,7 @@ function show_user_marker(lat, lng) {
 }
 
 function geocode(query) {
+    start_loading();
     if (typeof(query) == 'string') {
         gr = { 'address': query };
     } else {
@@ -100,6 +101,7 @@ function handle_geocode(results, status) {
 }
 
 function geolocate() {
+    start_loading();
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(geolocation_success, geolocation_error);
     } else {
@@ -124,6 +126,7 @@ function geolocation_error() {
     use_default_location();
 
     $('#resultinfo').html("Your browser does not support automatically determining your location so we're showing you Example Place."); // @todo Replace "Example Place"
+    stop_loading();
 }
 
 function process_location(lat, lng) {
@@ -240,6 +243,7 @@ function get_boundaries(lat, lng) {
         if (for_display != null) {
             display_boundary(for_display.slug, true);
         }
+        stop_loading();
     });
 }
 
@@ -407,7 +411,21 @@ function address_search() {
     return false;
 }
 
+function start_loading() {
+    $("#loading").fadeIn();
+
+    return false;
+}
+
+function stop_loading() {
+    $("#loading").fadeOut();
+
+    return false;
+}
+
 $(document).ready(function() {
+    stop_loading();
+
     // Setup handlers
     $('body').click(hide_alt_addresses);
     $('#not-where-i-am').click(not_where_i_am);

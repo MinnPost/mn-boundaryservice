@@ -142,6 +142,9 @@ h1, h2, h3, h4, h5 {
       width: 50%;
       padding: 10px 0;
       margin: 0; }
+  #wrap #loading {
+    text-align: center;
+    font-weight: bold;}
 
 /* Utility */
 .clearfix:after {
