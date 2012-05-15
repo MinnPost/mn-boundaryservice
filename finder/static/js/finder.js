@@ -131,8 +131,7 @@ function geolocation_error() {
 
 function process_location(lat, lng) {
     $('#resultinfo').html(
-        'Latitude: ' + lat + '<br />' +
-        'Longitude: ' + lng + '<br />'
+        'Location: (' + lat + ', ' + lng + ')'
     );
 
     init_map(lat, lng);
