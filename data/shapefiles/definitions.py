@@ -171,5 +171,19 @@ SHAPEFILES = {
         'notes': '',
         'encoding': '',
         'srid': ''
+    },
+    'National forests': {
+        'file': 'dnr/2008-national-forests/bdry_ntforpy3.shp',
+        'singular': 'National forest',
+        'kind_first': False,
+        'ider': utils.index_namer('nf-'),
+        'namer': utils.simple_namer(['name']),
+        'authority': 'Minnesota Department of Natural Resources (DNR)',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 6, 22),
+        'href': 'http://deli.dnr.state.mn.us/metadata.html?id=L220000110201',
+        'notes': '',
+        'encoding': '',
+        'srid': ''
     }
 }
