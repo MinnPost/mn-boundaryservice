@@ -213,5 +213,19 @@ SHAPEFILES = {
         'notes': 'Data provided by Zillow.',
         'encoding': '',
         'srid': ''
+    },
+    'Reservation lands (2010)': {
+        'file': 'reservations/2010-air/amerind2010.shp',
+        'singular': 'Reservation land (2010)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['id']),
+        'namer': utils.simple_namer(['name']),
+        'authority': 'Minnesota GIS and US Census',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 6, 22),
+        'href': 'http://www.gis.leg.mn/metadata/amerind2010.htm',
+        'notes': '',
+        'encoding': '',
+        'srid': ''
     }
 }
