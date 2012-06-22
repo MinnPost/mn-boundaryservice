@@ -199,5 +199,19 @@ SHAPEFILES = {
         'notes': 'From Wikipedia: "A census-designated place (CDP) is a concentration of population identified by the United States Census Bureau for statistical purposes. CDPs are delineated for each decennial census as the statistical counterparts of incorporated places such as cities, towns and villages. CDPs are populated areas that lack separate municipal government, but which otherwise physically resemble incorporated places."',
         'encoding': '',
         'srid': ''
+    },
+    'Neighborhoods (2012)': {
+        'file': 'zillow/2012-neighborhoods/ZillowNeighborhoods-MN.shp',
+        'singular': 'Neighborhood (2012)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['regionid']),
+        'namer': utils.simple_namer(['name']),
+        'authority': 'Zillow',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 6, 22),
+        'href': 'http://www.zillow.com/howto/api/neighborhood-boundaries.htm',
+        'notes': 'Data provided by Zillow.',
+        'encoding': '',
+        'srid': ''
     }
 }
