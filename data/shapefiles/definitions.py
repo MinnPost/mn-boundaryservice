@@ -228,6 +228,7 @@ SHAPEFILES = {
         'encoding': '',
         'srid': ''
     },
+    # Will take awhile
     'Voting precincts (2010)': {
         'file': 'precincts/2010-precincts/vtd_20101029.shp',
         'singular': 'Voting precinct (2010)',
@@ -239,6 +240,21 @@ SHAPEFILES = {
         'last_updated': date(2012, 6, 22),
         'href': 'http://www.gis.leg.mn/metadata/vtd2010.htm',
         'notes': '',
+        'encoding': '',
+        'srid': ''
+    },
+    # Will take awhile
+    'Minor civil divisions (2010)': {
+        'file': 'minor-civil-divisions/2010-mcd/mcd2010.shp',
+        'singular': 'Minor civil division (2010)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['id']),
+        'namer': utils.simple_namer(['name']),
+        'authority': 'Minnesota Legislative Coordinating Commission - GIS Office',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 6, 22),
+        'href': 'http://www.gis.leg.mn/metadata/mcd2010.htm',
+        'notes': 'Minor civil divisions are also considered cities and townships.',
         'encoding': '',
         'srid': ''
     }
