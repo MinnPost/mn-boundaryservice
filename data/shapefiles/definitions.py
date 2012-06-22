@@ -121,7 +121,7 @@ SHAPEFILES = {
         'singular': 'Census tract (2011)',
         'kind_first': False,
         'ider': utils.simple_namer(['geoid']),
-        'namer': utils.simple_namer(['namelsad']),
+        'namer': utils.simple_namer(['name']),
         'authority': 'U.S. Census Bureau Tiger lines',
         'domain': 'Minnesota',
         'last_updated': date(2012, 6, 22),
