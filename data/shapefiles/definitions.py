@@ -185,5 +185,19 @@ SHAPEFILES = {
         'notes': '',
         'encoding': '',
         'srid': ''
+    },
+    'Census places (2011)': {
+        'file': 'census-places/2011-places/tl_2011_27_place.shp',
+        'singular': 'Census place (2011)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['geoid']),
+        'namer': utils.simple_namer(['name']),
+        'authority': 'U.S. Census Bureau Tiger lines',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 6, 22),
+        'href': 'http://www.census.gov/cgi-bin/geo/shapefiles2011/main',
+        'notes': 'From Wikipedia: "A census-designated place (CDP) is a concentration of population identified by the United States Census Bureau for statistical purposes. CDPs are delineated for each decennial census as the statistical counterparts of incorporated places such as cities, towns and villages. CDPs are populated areas that lack separate municipal government, but which otherwise physically resemble incorporated places."',
+        'encoding': '',
+        'srid': ''
     }
 }
