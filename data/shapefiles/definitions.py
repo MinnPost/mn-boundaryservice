@@ -227,5 +227,19 @@ SHAPEFILES = {
         'notes': '',
         'encoding': '',
         'srid': ''
+    },
+    'Voting precincts (2010)': {
+        'file': 'precincts/2010-precincts/vtd_20101029.shp',
+        'singular': 'Voting precinct (2010)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['district', 'precinct_n']),
+        'namer': utils.simple_namer(['precinct']),
+        'authority': 'Minnesota GIS and Minnesota Secretary of State',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 6, 22),
+        'href': 'http://www.gis.leg.mn/metadata/vtd2010.htm',
+        'notes': '',
+        'encoding': '',
+        'srid': ''
     }
 }

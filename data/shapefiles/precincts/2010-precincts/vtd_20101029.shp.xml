@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>Office of the Minnesota Secretary of State, Elections Division</origin>
+				<pubdate>10/27/2010</pubdate>
+				<title>Minnesota Precincts, 2010 General Election</title>
+				<geoform>vector digital data</geoform>
+				<onlink>\\ELECT11\C\GIS\Data\Districts\2010_Districts\vtd_20100721.shp</onlink>
+				<ftname Sync="TRUE">vtd_2010General</ftname></citeinfo>
+		</citation>
+		<descript>
+			<abstract>Minnesota Precincts used in 2010 General Election</abstract>
+			<purpose>Geographic precinct database for the state of Minnesota</purpose>
+			<langdata Sync="TRUE">en</langdata></descript>
+		<timeperd>
+			<timeinfo>
+				<sngdate>
+					<caldate>11/2/2010</caldate>
+				</sngdate>
+			</timeinfo>
+			<current>ground condition</current>
+		</timeperd>
+		<status>
+			<progress>Complete</progress>
+			<update>None planned</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc>-97.269853</westbc>
+				<eastbc>-89.397028</eastbc>
+				<northbc>49.404414</northbc>
+				<southbc>43.435244</southbc>
+			</bounding>
+			<lboundng><leftbc Sync="TRUE">189775.379950</leftbc><rightbc Sync="TRUE">761662.354535</rightbc><bottombc Sync="TRUE">4816289.746171</bottombc><topbc Sync="TRUE">5472414.143295</topbc></lboundng></spdom>
+		<keywords>
+			<theme>
+				<themekt>REQUIRED: Reference to a formally registered thesaurus or a similar authoritative source of theme keywords.</themekt>
+				<themekey>Precincts</themekey>
+				<themekey>Vote Tabulation Districts</themekey>
+			</theme>
+			<place>
+				<placekey>Minnesota</placekey>
+			</place>
+			<stratum>
+				<stratkey>Elections</stratkey>
+			</stratum>
+			<temporal><tempkey>2010</tempkey></temporal></keywords>
+		<accconst>Public data</accconst>
+		<useconst>Office of the Secretary of State maintains this data as accurately as possible, but cannot assure 100% accuracy.  For definitive precinct lines, please contact the jurisdiction (city, township, or county for unorganized territory) in question.  To find polling places, use the Secretary of State's Polling Place Finder: http://pollfinder.sos.state.mn.us</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntperp>
+					<cntper>Brad Neuhauser</cntper>
+					<cntorg>Office of the Minnesota Secretary of State</cntorg>
+				</cntperp>
+				<cntpos>GIS Specialist</cntpos>
+				<cntaddr>
+					<addrtype>mailing address</addrtype>
+					<address>180 State Office Building</address>
+					<address>100 Rev. Dr. Martin Luther King, Jr. Blvd.</address>
+					<city>St. Paul</city>
+					<state>MN</state>
+					<postal>55155</postal>
+					<country>United States</country>
+				</cntaddr>
+				<cntvoice>651-556-0648</cntvoice>
+				<cntfax>651-296-9073</cntfax>
+				<cntemail>brad.neuhauser@state.mn.us</cntemail>
+				<hours>8:00 - 4:30</hours>
+			</cntinfo>
+		</ptcontac>
+		<datacred>US Census Bureau, The Lawrence Group, The Office of the Minnesota Secretary of State</datacred>
+		<native>Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 3; ESRI ArcCatalog 9.2.6.1500</native>
+		<natvform Sync="TRUE">Shapefile</natvform></idinfo>
+	<dataqual>
+		<attracc>
+			<attraccr>Attributes updated as they change</attraccr>
+		</attracc>
+		<logic>Precincts represented as interlocking, non overlapping polygons covering the state of Minnesota.  Topology has not been checked, however, so some small slivers/overlaps may occur.</logic>
+		<complete>Updated through annexations approved before 10/12/2010.
+
+Precincts added since 2008 general election:
+Blue Earth - North Mankato (0213)
+Dodge - Blooming Prairie (0007)
+Itasca - Coleraine West 1 (0086)
+Itasca - Coleraine West 2 (0087)
+Kittson - Klondike Unorg (0092)
+Koochiching - West Koochiching (0175)
+Lake of the Woods - 3-E Baudette City (0080) *added following a February 2010 annexation
+Lake of the Woods - 5-D Roosevelt (0075)
+Le Sueur - Mankato (0087)
+Marshall - Mud Lake Unorg (0166)
+Olmsted - Rochester W-3 P-7 (0119)
+Pope - Brooten (0022)
+Renville - Redwood Falls (0152)
+Sibley - Le Sueur (0082)
+Stearns - Clearwater (0042)
+Stearns - Maine Prairie Twp P-2 (0162)
+Stearns - Sartell P-7 (0414)
+Todd - Swanville (0173)
+Wright - Howard Lake P-2 (0101)
+Wright - Montrose P-2 (0137)
+
+Precincts deleted since the 2008 general election:
+Benton - Ronneby (0065)
+Hennepin - Crystal W-3 P-3 (0580)
+Itasca - Grand Rapids Twp P-8 (0152)
+Itasca - Grand Rapids Twp P-9 (0162)
+Itasca - Grand Rapids Twp P-10 (0165)
+Itasca - Grand Rapids Twp P-7 (0170)
+Lac Qui Parle - Dawson W-2 (0050)
+Lac Qui Parle - Dawson W-3 (0055)
+St. Louis - Ely P-2 (0455)
+St. Louis - Ely P-3 (0460)
+St. Louis - Ely P-4 (0465)
+St. Louis - Eveleth P-4 (0490)
+St. Louis - Eveleth P-5 (0495)
+St. Louis - Eveleth P-6 (0500)
+Stearns - St. Joseph P-3 (0386)</complete>
+		<posacc>
+			<horizpa>
+				<horizpar>Changes to precinct data are recorded based on a variety of sources, including GIS files, legal descriptions, official maps, and hand-drawn maps.  No determination of spatial accuracy has been made.  Counties where precincts are drawn to follow Lawrence Group data generally are more spatially accurate.  Municipalities that have had no changes since the 2000 redistricting cycle may still have 2002 TIGER boundaries.</horizpar>
+			</horizpa>
+		</posacc>
+		<lineage>
+			<srcinfo>
+				<srctime>
+					<srccurr>publication date</srccurr>
+				</srctime>
+			</srcinfo>
+			<procstep>
+				<procdesc>Dataset copied.</procdesc>
+				<srcused>\\ELECT11\C\GIS\Boundary Changes\TLG\TLGDistricts.mdb</srcused>
+			</procstep>
+			<procstep>
+				<procdesc>Metadata imported.</procdesc>
+				<srcused>C:\GIS\Data\Districts\2010_Districts\vtd_Jan2010.shp.xml</srcused>
+			</procstep>
+			<procstep>
+				<procdesc>Metadata imported.</procdesc>
+				<srcused>C:\DOCUME~1\neubr01\LOCALS~1\Temp\xmlB64.tmp</srcused>
+			</procstep>
+			<procstep>
+				<procdesc>Metadata imported.</procdesc>
+				<srcused>C:\DOCUME~1\neubr01\LOCALS~1\Temp\xml2F5.tmp</srcused>
+			</procstep>
+			<procstep><procdesc Sync="TRUE">Metadata imported.</procdesc><srcused Sync="TRUE">C:\DOCUME~1\neubr01\LOCALS~1\Temp\xml3EC.tmp</srcused><date Sync="TRUE">20101027</date><time Sync="TRUE">10165700</time></procstep></lineage>
+	</dataqual>
+	<spdoinfo>
+		<direct>Vector</direct>
+		<ptvctinf>
+			<sdtsterm Name="vtd_2010General">
+				<sdtstype>G-polygon</sdtstype>
+				<ptvctcnt>4135</ptvctcnt>
+			</sdtsterm>
+			<esriterm Name="vtd_2010General"><efeatyp Sync="TRUE">Simple</efeatyp><efeageom Sync="TRUE">Polygon</efeageom><esritopo Sync="TRUE">FALSE</esritopo><efeacnt Sync="TRUE">4136</efeacnt><spindex Sync="TRUE">TRUE</spindex><linrefer Sync="TRUE">FALSE</linrefer></esriterm></ptvctinf>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<planar>
+				<planci>
+					<plance>coordinate pair</plance>
+					<coordrep>
+						<absres>0.000000</absres>
+						<ordres>0.000000</ordres>
+					</coordrep>
+					<plandu>meters</plandu>
+				</planci>
+				<gridsys><gridsysn Sync="TRUE">Universal Transverse Mercator</gridsysn><utm><utmzone Sync="TRUE">15</utmzone><transmer><sfctrmer Sync="TRUE">0.999600</sfctrmer><longcm Sync="TRUE">-93.000000</longcm><latprjo Sync="TRUE">0.000000</latprjo><feast Sync="TRUE">500000.000000</feast><fnorth Sync="TRUE">0.000000</fnorth></transmer></utm></gridsys></planar>
+			<geodetic>
+				<horizdn>North American Datum of 1983</horizdn>
+				<ellips>Geodetic Reference System 80</ellips>
+				<semiaxis>6378137.000000</semiaxis>
+				<denflat>298.257222</denflat>
+			</geodetic>
+			<cordsysn><geogcsn Sync="TRUE">GCS_North_American_1983</geogcsn><projcsn Sync="TRUE">NAD_1983_UTM_Zone_15N</projcsn></cordsysn></horizsys>
+		<vertdef>
+			<altsys>
+				<altres>0.000010</altres>
+				<altenc>Explicit elevation coordinate included with horizontal coordinates</altenc>
+			</altsys>
+		</vertdef>
+	</spref>
+	<eainfo>
+		<detailed Name="vtd_2010General">
+			<enttyp>
+				<enttypl>vtd_2010General</enttypl>
+				<enttypd>Voting districts within the state of Minnesota</enttypd>
+				<enttypt Sync="TRUE">Feature Class</enttypt><enttypc Sync="TRUE">4136</enttypc></enttyp>
+			<attr>
+				<attrlabl>Shape</attrlabl>
+				<attrdef>Feature geometry.</attrdef>
+				<attrdefs>ESRI</attrdefs>
+				<attrdomv>
+					<udom>Coordinates defining the features.</udom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl>DISTRICT</attrlabl>
+				<attrdef>Combined county fips and precinct code</attrdef>
+			</attr>
+			<attr>
+				<attrlabl>Number_</attrlabl>
+				<attrdef>Combined county fips and precinct code</attrdef>
+				<attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">254</attwidth></attr>
+			<attr>
+				<attrlabl>Precinct</attrlabl>
+				<attrdef>Precinct standard name</attrdef>
+				<attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">9</attwidth></attr>
+			<attr>
+				<attrlabl>MCD</attrlabl>
+				<attrdef>Minor Civil Division name</attrdef>
+				<attrvai>
+					<attrvae>Usually but not always aligns with Census MCD</attrvae>
+				</attrvai>
+				<attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">254</attwidth></attr>
+			<attr>
+				<attrlabl>ShortLabel</attrlabl>
+				<attrdef>Shortened precinct name for labeling purposes</attrdef>
+				<attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">254</attwidth></attr>
+			<attr>
+				<attrlabl>LongLabel</attrlabl>
+				<attrdef>Full precinct name for labeling purposes</attrdef>
+				<attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">254</attwidth></attr>
+			<attr>
+				<attrlabl>County</attrlabl>
+				<attrdef>County name</attrdef>
+				<attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">254</attwidth></attr>
+			<attr>
+				<attrlabl>LEG</attrlabl>
+				<attrdef>Legislative district</attrdef>
+				<attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">30</attwidth></attr>
+			<attr>
+				<attrlabl>SEN</attrlabl>
+				<attrdef>State Senate district</attrdef>
+				<attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">5</attwidth></attr>
+			<attr>
+				<attrlabl>CNG</attrlabl>
+				<attrdef>Congressional district</attrdef>
+				<attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">4</attwidth></attr>
+			<attr>
+				<attrlabl>COM</attrlabl>
+				<attrdef>County Commissioner district</attrdef>
+				<attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">4</attwidth></attr>
+			<attr>
+				<attrlabl>Shape_Area</attrlabl>
+				<attrdef>Area of feature in internal units squared</attrdef>
+				<attrdefs>ESRI</attrdefs>
+				<attrdomv>
+					<udom>Positive real numbers that are automatically generated.</udom>
+				</attrdomv>
+				<attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">4</attwidth></attr>
+			<attr>
+				<attrlabl>JUD</attrlabl>
+				<attrdef>State judicial district</attrdef>
+				<attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">4</attwidth></attr>
+			<attr>
+				<attrlabl>VR_MCD</attrlabl>
+				<attrdef>Minor civil division code (SVRS)</attrdef>
+				<attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">4</attwidth></attr>
+			<attr>
+				<attrlabl>FID</attrlabl>
+				<attrdef>Internal feature number</attrdef>
+				<attrdefs>ESRI</attrdefs>
+				<attrdomv>
+					<udom>Sequential unique whole numbers that are automatically generated.</udom>
+				</attrdomv>
+				<attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">9</attwidth></attr>
+			<attr>
+				<attrlabl>CTU_Code</attrlabl>
+				<attrdef>Municipality FIPS code</attrdef>
+				<attrvai>
+					<attrvae>Usually but not always aligns with Census FIPS code</attrvae>
+				</attrvai>
+				<attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">9</attwidth></attr>
+			<attr>
+				<attrlabl>Precinct_N</attrlabl>
+				<attrtype Sync="TRUE">Float</attrtype><attwidth Sync="TRUE">19</attwidth><atnumdec Sync="TRUE">11</atnumdec><attrdef>Precinct Code</attrdef></attr>
+			<attr>
+				<attrlabl>Shape_Leng</attrlabl>
+				<attrtype Sync="TRUE">Float</attrtype><attwidth Sync="TRUE">19</attwidth><atnumdec Sync="TRUE">11</atnumdec></attr>
+			<attr>
+				<attrlabl>WD</attrlabl>
+				<attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">3</attwidth><attrdef>Ward (if applicable)</attrdef></attr>
+		</detailed>
+		<overview>
+			<eaover>Note: MCD and CTU_Code fields are based on Census designations, but do not always align with Census MCD names and FIPS codes, especially in unorganized territories.</eaover>
+		</overview>
+	</eainfo>
+	<distinfo>
+		<resdesc>Downloadable Data</resdesc>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<transize>7.067</transize>
+					<dssize Sync="TRUE">7.068</dssize></digtinfo>
+			</digform>
+		</stdorder>
+	</distinfo>
+	<metainfo>
+		<metd>20101028</metd>
+		<metc>
+			<cntinfo>
+				<cntperp>
+					<cntper>Brad Neuhauser</cntper>
+					<cntorg>Office of the Minnesota Secretary of State, Elections Division</cntorg>
+				</cntperp>
+				<cntpos>GIS Specialist</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>180 State Office Building</address>
+					<address>100 Rev. Dr. Martin Luther King, Jr. Blvd.</address>
+					<city>Saint Paul</city>
+					<state>MN</state>
+					<postal>55155</postal>
+				</cntaddr>
+				<cntvoice>651-556-0648</cntvoice>
+				<cntfax>651-297-9073</cntfax>
+				<cntemail>brad.neuhauser@state.mn.us</cntemail>
+			</cntinfo>
+		</metc>
+		<metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv>FGDC-STD-001-1998</metstdv>
+		<mettc>local time</mettc>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<langmeta Sync="TRUE">en</langmeta><metextns><onlink Sync="TRUE">http://www.esri.com/metadata/esriprof80.html</onlink><metprof Sync="TRUE">ESRI Metadata Profile</metprof></metextns></metainfo>
+	<Esri><MetaID>{46E1877A-E7D9-43C8-B081-FD2454E11849}</MetaID><CreaDate>20101027</CreaDate><CreaTime>10165700</CreaTime><SyncOnce>FALSE</SyncOnce><SyncDate>20101027</SyncDate><SyncTime>10353400</SyncTime><ModDate>20101027</ModDate><ModTime>10373600</ModTime></Esri><dataIdInfo><envirDesc Sync="TRUE">Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 3; ESRI ArcCatalog 9.2.6.1500</envirDesc><dataLang><languageCode Sync="TRUE" value="en"></languageCode></dataLang><idCitation><resTitle Sync="TRUE">vtd_2010General</resTitle><presForm><PresFormCd Sync="TRUE" value="005"></PresFormCd></presForm></idCitation><spatRpType><SpatRepTypCd Sync="TRUE" value="001"></SpatRepTypCd></spatRpType><dataExt><geoEle><GeoBndBox esriExtentType="native"><westBL Sync="TRUE">189775.37995</westBL><eastBL Sync="TRUE">761662.354535</eastBL><northBL Sync="TRUE">5472414.143295</northBL><southBL Sync="TRUE">4816289.746171</southBL><exTypeCode Sync="TRUE">1</exTypeCode></GeoBndBox></geoEle></dataExt><geoBox esriExtentType="decdegrees"><westBL Sync="TRUE">-97.269853</westBL><eastBL Sync="TRUE">-89.397028</eastBL><northBL Sync="TRUE">49.404414</northBL><southBL Sync="TRUE">43.435244</southBL><exTypeCode Sync="TRUE">1</exTypeCode></geoBox></dataIdInfo><mdLang><languageCode Sync="TRUE" value="en"></languageCode></mdLang><mdStanName Sync="TRUE">ISO 19115 Geographic Information - Metadata</mdStanName><mdStanVer Sync="TRUE">DIS_ESRI1.0</mdStanVer><mdChar><CharSetCd Sync="TRUE" value="004"></CharSetCd></mdChar><mdHrLv><ScopeCd Sync="TRUE" value="005"></ScopeCd></mdHrLv><mdHrLvName Sync="TRUE">dataset</mdHrLvName><distInfo><distributor><distorTran><onLineSrc><orDesc Sync="TRUE">002</orDesc><linkage Sync="TRUE">file://\\ELECT11\C\GIS\Data\Districts\2010_Districts\vtd_2010General.shp</linkage><protocol Sync="TRUE">Local Area Network</protocol></onLineSrc><transSize Sync="TRUE">7.068</transSize></distorTran><distorFormat><formatName Sync="TRUE">Shapefile</formatName></distorFormat></distributor></distInfo><refSysInfo><RefSystem><refSysID><identCode Sync="TRUE">NAD_1983_UTM_Zone_15N</identCode></refSysID></RefSystem></refSysInfo><spatRepInfo><VectSpatRep><topLvl><TopoLevCd Sync="TRUE" value="001"></TopoLevCd></topLvl><geometObjs Name="vtd_2010General"><geoObjTyp><GeoObjTypCd Sync="TRUE" value="001"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">4136</geoObjCnt></geometObjs></VectSpatRep></spatRepInfo><mdDateSt Sync="TRUE">20101027</mdDateSt></metadata>
