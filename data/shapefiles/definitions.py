@@ -143,5 +143,33 @@ SHAPEFILES = {
         'notes': '',
         'encoding': '',
         'srid': ''
+    },
+    'State forests': {
+        'file': 'dnr/2009-state-forests/bdry_stforpy3.shp',
+        'singular': 'State forest',
+        'kind_first': False,
+        'ider': utils.index_namer('sft-'),
+        'namer': utils.simple_namer(['name']),
+        'authority': 'Minnesota Department of Natural Resources (DNR)',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 6, 22),
+        'href': 'http://deli.dnr.state.mn.us/metadata.html?id=L220000170201',
+        'notes': '',
+        'encoding': '',
+        'srid': ''
+    },
+    'State parks': {
+        'file': 'dnr/2002-state-parks/bdry_stprkpy3.shp',
+        'singular': 'State park',
+        'kind_first': False,
+        'ider': utils.index_namer('sp-'),
+        'namer': utils.simple_namer(['long_name']),
+        'authority': 'Minnesota Department of Natural Resources (DNR)',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 6, 22),
+        'href': 'http://deli.dnr.state.mn.us/metadata.html?id=L220000190201',
+        'notes': '',
+        'encoding': '',
+        'srid': ''
     }
 }

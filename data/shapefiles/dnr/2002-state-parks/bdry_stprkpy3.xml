@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+
+
+<metadata>
+
+
+  <idinfo>
+
+    <citation>
+      <citeinfo>
+        <origin>Division of Parks and Recreation</origin>
+        <pubdate>2002-01-01 00:00:00.0</pubdate>
+        <title>State Park Statutory Boundaries</title>
+        <mgmg1cid></mgmg1cid>
+          <pubinfo>
+            <publish>Minnesota DNR - Division of Parks &amp; Recreation</publish>
+          </pubinfo>
+        <onlink>http://deli.dnr.state.mn.us/</onlink>
+      </citeinfo>
+    </citation>
+
+    <descript>
+      <abstract>Legislative statutory boundaries for sixty six state parks, six state recreation areas, and eight state waysides.  These data are derived principally from DNR's pls40ne3 coverage where available, with special delineations using heads up digitizing from DOQ and DRGs with interepretations based on changes in land use.  Other sources include plsscne3, BOE digital parcel lines, survey quality GPS, and best guess.</abstract>
+      <purpose>The State Park Statutory Boundaries layer was created to support a variety of park planning and management activities and provide a GIS layer that more accurately represents current legislative-defined boundaries for state parks.</purpose>
+      <supplinf>Statewide</supplinf>
+    </descript>
+
+    <timeperd>
+      <timeinfo>
+        <sngdate>
+          <caldate>2002</caldate>
+        </sngdate>
+      </timeinfo>
+      <current>This data is constantly being improved as more accurate data sets are completed for various areas of the state.  These boundaries will be revisited annually as legislation for parks statutory boundaries are changed. Individual boundary segments have dates that they were updated. Some segments have not been updated from the original set.  These .aat segments have a bdry_date of 19900101.</current>
+    </timeperd>
+
+    <status>
+      <progress>Complete</progress>
+      <update>As Needed</update>
+    </status>
+    
+    <spdom>
+      <bounding>
+        <westbc>-97</westbc>
+        <eastbc>-89</eastbc>
+        <northbc>49</northbc>
+        <southbc>43</southbc>
+      </bounding>
+    </spdom>
+
+    <keywords>
+      <theme>
+        <themekey>State Parks, Recreation, State Land, boundaries</themekey>
+      </theme>
+      <place>
+        <placekey>Minnesota</placekey>
+      </place>
+    </keywords>
+
+    <accconst>None</accconst>
+    <useconst>None</useconst>
+    
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Hal Watson</cntper>
+          <cntorg>DNR-MIS</cntorg>
+        </cntperp>
+        <cntpos>GIS Database Coordinator</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>500 Lafayette Road, Box 11</address>
+          <city>St. Paul</city>
+          <state>MN</state>
+          <postal>55155-4011</postal>
+        </cntaddr>
+        <cntvoice>(651) 259-5508</cntvoice>
+        <cntfax>(651) 297-4946</cntfax>
+        <cntemail>hal.watson@state.mn.us</cntemail>
+      </cntinfo>
+    </ptcontac>
+
+    <browse>
+      <browsen>http://jmaps.dnr.state.mn.us/gis/dp_datasample.jsp?mpid=22000019&amp;ptid=2&amp;fcid=1&amp;lname=State Park Statutory Boundaries</browsen>
+      <browsed></browsed>
+    </browse>
+
+    <native>Arc/Info 7.x</native>
+    
+    <crossref>
+      <citeinfo>
+        <title></title>
+      </citeinfo>
+    </crossref>
+
+  </idinfo>
+
+
+  <dataqual>
+
+    <attracc>
+      <attraccr>Source table BDRY_STPRKPY3.DBF:  Not specifically assesed.
+</attraccr>
+    </attracc>
+
+    <logic>Data are topologically correct using ARC/INFO.  All polygons are closed and lines intersect where intended.</logic>
+    <complete>Data are complete over the entire state.</complete>
+    
+    <posacc>
+      <horizpa>
+        <horizpar>Source layer bdry_stprkpy3:  Horizontal positional accuracy is dependant on accuracy of the pl40ne3 dataset and statutory descriptions of park boundaries.  In most areas, pls40ne3 features can be expected to be +/- 40 feet from their true position.  The most significant problems have typically been observed in the northeastern part of the state.  However, when significant accuracy problems are observed, State Parks Statuatory boundaries will typically rely on other sources of information, such as cultural features visible on aerial imagery.  Accurate land surveyed boundaries are also used on occasion.
+</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>Source layer bdry_stprkpy3:  Not Applicable
+</vertaccr>
+      </vertacc>
+    </posacc>
+     
+    <lineage>
+      <srcinfo>
+        <srcscale>Source layer bdry_stprkpy3:  24000
+</srcscale>
+      </srcinfo>
+      <procstep>
+        <procdesc>Attribute Lineage for source table BDRY_STPRKPY3.DBF:  Unknown.
+</procdesc>
+      </procstep>
+    </lineage>
+
+  </dataqual>
+
+
+  <spdoinfo>
+
+    <indspref>Not Applicable</indspref>
+    <direct>vector</direct>
+    <mgmg3obj>polygon</mgmg3obj>
+    <mgmg3til>state</mgmg3til>
+
+  </spdoinfo>
+
+
+  <spref>
+
+    <horizsys>
+      <geograph>
+        <latres></latres>
+        <longres></longres>
+      </geograph>
+      <planar>
+        <mapproj>
+          <mapprojn>Transverse Mercator</mapprojn>
+          <mgmg4par>Not Applicable</mgmg4par>
+          <otherprj>Not Applicable</otherprj>
+        </mapproj>
+        <gridsys>
+          <gridsysn>UTM</gridsysn>
+          <utm>
+            <utmzone>15</utmzone>
+          </utm>
+          <spcs>
+            <spcszone></spcszone>
+          </spcs>
+          <mgmg4coz></mgmg4coz>
+          <mgmg4adj>Not Applicable</mgmg4adj>
+        </gridsys>
+        <planci>
+          <coordrep>
+            <absres></absres>
+            <ordres></ordres>
+          </coordrep>
+          <distbrep>
+            <distres></distres>
+          </distbrep>
+          <plandu>meters</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>NAD83</horizdn>
+        <ellips>GRS1980</ellips>
+      </geodetic>
+    </horizsys>
+    <vertdef>
+      <altsys>
+        <altdatum>Not Applicable</altdatum>
+        <altunits>Not Applicable</altunits>
+      </altsys>
+      <depthsys>
+        <depthdn>Not Applicable</depthdn>
+        <depthdu>Not Applicable</depthdu>
+      </depthsys>
+    </vertdef>
+
+  </spref>
+
+
+  <eainfo>
+
+  <detailed><enttyp><enttypl>BDRY_STPRKPY3.DBF</enttypl><enttypd>Shapefile Attribute Table</enttypd></enttyp><attr><attrlabl>LONG_NAME</attrlabl><attrdef>Unit Name and Type</attrdef><attrdomv></attrdomv></attr><attr><attrlabl>NAME</attrlabl><attrdef>Unit Name</attrdef><attrdomv></attrdomv></attr><attr><attrlabl>PGRM_PRJ</attrlabl><attrdef>BREM Program Project code - state parks</attrdef><attrdomv><edom><edomv>SRA00***</edomv><edomvd>BREM Program Project code - state recreation areas</edomvd></edom></attrdomv></attr><attr><attrlabl>PARK_TYPE</attrlabl><attrdef>Unit Type</attrdef></attr><attr><attrlabl>PARK_CODE</attrlabl><attrdef>Region number and unique 2 digit park code</attrdef><attrdomv></attrdomv></attr><attr><attrlabl>STAT_ACRES</attrlabl><attrdef>Legislative Statutory Acres</attrdef></attr><attr><attrlabl>PARK_OWNED</attrlabl><attrdef>Park Owned/Administered</attrdef></attr><attr><attrlabl>OWN_DATE</attrlabl><attrdef>Date that park ownership was updated.</attrdef></attr><attr><attrlabl>CALC_ACRES</attrlabl><attrdef>ArcView calculated acres</attrdef></attr></detailed>
+
+    <overview>
+      <eaover></eaover>
+      <eadetcit></eadetcit>
+    </overview>
+
+  </eainfo>
+
+
+  <distinfo>
+
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>Hal Watson</cntper>
+          <cntorg>DNR-MIS</cntorg>
+        </cntperp>
+        <cntpos>GIS Database Coordinator</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>500 Lafayette Road, Box 11</address>
+          <city>St. Paul</city>
+          <state>MN</state>
+          <postal>55155-4011</postal>
+        </cntaddr>
+        <cntvoice>(651) 259-5508</cntvoice>
+        <cntfax>(651) 297-4946</cntfax>
+        <cntemail>hal.watson@state.mn.us</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>bdry_stprkpy3</resdesc>
+    <distliab>The Minnesota Department of Natural Resources makes no representation or warranties, express or implied, with respect to the reuse of data provided herewith, regardless of its format or the means of its transmission. There is no guarantee or representation to the user as to the accuracy, currency, suitability, or reliability of this data for any purpose. The user accepts the data &apos;as is&apos;, and assumes all risks associated with its use. By accepting this data, the user agrees not to transmit this data or provide access to it or any part of it to another party unless the user shall include with the data a copy of this disclaimer. The Minnesota Department of Natural Resources assumes no responsibility for actual or consequential damage incurred as a result of any user&apos;s reliance on this data.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Shapefile</formname>
+          <formvern>Not Applicable</formvern>
+          <transize>0.7</transize>
+        </digtinfo>
+      </digform>
+      <ordering>See Online Linkage or Distribution Contact</ordering>
+    </stdorder>
+
+  </distinfo>
+
+
+  <metainfo>
+
+    <metd>2006-10-20 10:30:29.0</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Ron Danielson</cntper>
+          <cntorg>DNR-Parks</cntorg>
+        </cntperp>
+        <cntpos>GIS Coordinator</cntpos>
+        <cntaddr>
+	  <addrtype>Mailing and Physical</addrtype>
+          <address>1201 East Hwy 2</address>
+          <city>Grand Rapids</city>
+          <state>MN</state>
+          <postal>55744</postal>
+        </cntaddr>
+        <cntvoice>(218) 327-4114</cntvoice>
+        <cntfax>(218) 327-4263</cntfax>
+        <cntemail>ron.danielson@state.mn.us</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Minnesota Geographic Metadata Guidelines</metstdn>
+    <metstdv>1.2</metstdv>
+    <metextns>
+      <onlink>http://www.gis.state.mn.us/stds/metadata.htm</onlink>
+    </metextns>
+
+  </metainfo>
+
+</metadata>
+

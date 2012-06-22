@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+
+
+<metadata>
+
+
+  <idinfo>
+
+    <citation>
+      <citeinfo>
+        <origin>DNR Forestry - Forest Resource Assessment</origin>
+        <pubdate>2003-09-04 00:00:00.0</pubdate>
+        <title>State Forest Boundaries</title>
+        <mgmg1cid></mgmg1cid>
+          <pubinfo>
+            <publish>Minnesota DNR - Division of Forestry</publish>
+          </pubinfo>
+        <onlink>http://deli.dnr.state.mn.us/</onlink>
+      </citeinfo>
+    </citation>
+
+    <descript>
+      <abstract>This theme shows the boundaries of those areas of Minnesota that have been legislatively designated as State Forests(http://www.dnr.state.mn.us/state_forests/index.html). Minnesota?s 58 state forests were established to produce timber and other forest crops, provide outdoor recreation, protect watersheds, and perpetuate rare and distinctive species of native flora and fauna. The mapped boundaries are based on legislative/statutory language and are described in broad terms based on legal descriptions. Private or other ownerships included inside a State Forest boundary are typically NOT identified in legislative language and subsequently are NOT mapped in this layer. It is important to note that these data do not represent public ownership. State Forest boundaries often include private land and should not be used to determine ownership. Ownership information can be found in the State
+Lands by Administrator &#8211; Forestry(http://jmaps.dnr.state.mn.us/mdreporter/dp_brief_record.jsp?mpid=24000005&amp;ptid=02&amp;fcid=01) layer and the GAP
+Stewardship 2008(http://jmaps.dnr.state.mn.us/mdreporter/dp_brief_record.jsp?mpid=39000586&amp;ptid=02&amp;fcid=01) layer.
+
+Data has been updated during 2009 by the DNR Forest Resource Assessment office.
+</abstract>
+      <purpose>Mapping and analysis requiring DNR State Forest Boundaries</purpose>
+      <supplinf>Statewide</supplinf>
+    </descript>
+
+    <timeperd>
+      <timeinfo>
+        <sngdate>
+          <caldate></caldate>
+        </sngdate>
+      </timeinfo>
+      <current>2005</current>
+    </timeperd>
+
+    <status>
+      <progress></progress>
+      <update></update>
+    </status>
+    
+    <spdom>
+      <bounding>
+        <westbc>-97.5</westbc>
+        <eastbc>-89</eastbc>
+        <northbc>49.5</northbc>
+        <southbc>43</southbc>
+      </bounding>
+    </spdom>
+
+    <keywords>
+      <theme>
+        <themekey>boundaries, forest, state</themekey>
+      </theme>
+      <place>
+        <placekey>Minnesota</placekey>
+      </place>
+    </keywords>
+
+    <accconst></accconst>
+    <useconst></useconst>
+    
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Dave Hienzen</cntper>
+          <cntorg>DNR - Forestry, Resource Assessment</cntorg>
+        </cntperp>
+        <cntpos>Supervisor</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>413 SE 13th Street</address>
+          <city>Grand Rapids</city>
+          <state>MN</state>
+          <postal>55744</postal>
+        </cntaddr>
+        <cntvoice>(218) 327-4449 x222</cntvoice>
+        <cntfax>(218) 327-4517</cntfax>
+        <cntemail>david.heinzen@state.mn.us</cntemail>
+      </cntinfo>
+    </ptcontac>
+
+    <browse>
+      <browsen>http://jmaps.dnr.state.mn.us/gis/dp_datasample.jsp?mpid=22000017&amp;ptid=2&amp;fcid=1&amp;lname=State Forest Boundaries</browsen>
+      <browsed></browsed>
+    </browse>
+
+    <native>ArcView Shapefile</native>
+    
+    <crossref>
+      <citeinfo>
+        <title></title>
+      </citeinfo>
+    </crossref>
+
+  </idinfo>
+
+
+  <dataqual>
+
+    <attracc>
+      <attraccr></attraccr>
+    </attracc>
+
+    <logic></logic>
+    <complete></complete>
+    
+    <posacc>
+      <horizpa>
+        <horizpar></horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr></vertaccr>
+      </vertacc>
+    </posacc>
+     
+    <lineage>
+      <srcinfo>
+        <srcscale></srcscale>
+      </srcinfo>
+      <procstep>
+        <procdesc></procdesc>
+      </procstep>
+    </lineage>
+
+  </dataqual>
+
+
+  <spdoinfo>
+
+    <indspref></indspref>
+    <direct>vector</direct>
+    <mgmg3obj>polygon</mgmg3obj>
+    <mgmg3til>state</mgmg3til>
+
+  </spdoinfo>
+
+
+  <spref>
+
+    <horizsys>
+      <geograph>
+        <latres></latres>
+        <longres></longres>
+      </geograph>
+      <planar>
+        <mapproj>
+          <mapprojn>Transverse Mercator</mapprojn>
+          <mgmg4par>Not Applicable</mgmg4par>
+          <otherprj>Not Applicable</otherprj>
+        </mapproj>
+        <gridsys>
+          <gridsysn>UTM</gridsysn>
+          <utm>
+            <utmzone>15</utmzone>
+          </utm>
+          <spcs>
+            <spcszone></spcszone>
+          </spcs>
+          <mgmg4coz></mgmg4coz>
+          <mgmg4adj>Not Applicable</mgmg4adj>
+        </gridsys>
+        <planci>
+          <coordrep>
+            <absres></absres>
+            <ordres></ordres>
+          </coordrep>
+          <distbrep>
+            <distres></distres>
+          </distbrep>
+          <plandu>meters</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>NAD83</horizdn>
+        <ellips>GRS1980</ellips>
+      </geodetic>
+    </horizsys>
+    <vertdef>
+      <altsys>
+        <altdatum>Not Applicable</altdatum>
+        <altunits>Not Applicable</altunits>
+      </altsys>
+      <depthsys>
+        <depthdn>Not Applicable</depthdn>
+        <depthdu>Not Applicable</depthdu>
+      </depthsys>
+    </vertdef>
+
+  </spref>
+
+
+  <eainfo>
+
+  <detailed><enttyp><enttypl>BDRY_STFORPY3.DBF</enttypl><enttypd>Shapefile Attribute Table</enttypd></enttyp><attr><attrlabl>NAME</attrlabl><attrdef>State Forest Unit Name</attrdef></attr><attr><attrlabl>SFT</attrlabl><attrdef>DNR program project code</attrdef></attr></detailed>
+
+    <overview>
+      <eaover></eaover>
+      <eadetcit></eadetcit>
+    </overview>
+
+  </eainfo>
+
+
+  <distinfo>
+
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>Dave Hienzen</cntper>
+          <cntorg>DNR - Forestry, Resource Assessment</cntorg>
+        </cntperp>
+        <cntpos>Supervisor</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>413 SE 13th Street</address>
+          <city>Grand Rapids</city>
+          <state>MN</state>
+          <postal>55744</postal>
+        </cntaddr>
+        <cntvoice>(218) 327-4449 x222</cntvoice>
+        <cntfax>(218) 327-4517</cntfax>
+        <cntemail>david.heinzen@state.mn.us</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>bdry_stforpy3</resdesc>
+    <distliab>The Minnesota Department of Natural Resources makes no representation or warranties, express or implied, with respect to the reuse of data provided herewith, regardless of its format or the means of its transmission. There is no guarantee or representation to the user as to the accuracy, currency, suitability, or reliability of this data for any purpose. The user accepts the data &apos;&apos;as is&apos;&apos;, and assumes all risks associated with its use. By accepting this data, the user agrees not to transmit this data or provide access to it or any part of it to another party unless the user shall include with the data a copy of this disclaimer. The Minnesota Department of Natural Resources assumes no responsibility for actual or consequential damage incurred as a result of any user&apos;&apos;s reliance on this data.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Shapefile</formname>
+          <formvern>Not Applicable</formvern>
+          <transize></transize>
+        </digtinfo>
+      </digform>
+      <ordering>See Online Linkage or Distribution Contact</ordering>
+    </stdorder>
+
+  </distinfo>
+
+
+  <metainfo>
+
+    <metd>2010-01-04 16:13:34.0</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Dave Hienzen</cntper>
+          <cntorg>DNR - Forestry, Resource Assessment</cntorg>
+        </cntperp>
+        <cntpos>Supervisor</cntpos>
+        <cntaddr>
+	  <addrtype>Mailing and Physical</addrtype>
+          <address>413 SE 13th Street</address>
+          <city>Grand Rapids</city>
+          <state>MN</state>
+          <postal>55744</postal>
+        </cntaddr>
+        <cntvoice>(218) 327-4449 x222</cntvoice>
+        <cntfax>(218) 327-4517</cntfax>
+        <cntemail>david.heinzen@state.mn.us</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Minnesota Geographic Metadata Guidelines</metstdn>
+    <metstdv>1.2</metstdv>
+    <metextns>
+      <onlink>http://www.gis.state.mn.us/stds/metadata.htm</onlink>
+    </metextns>
+
+  </metainfo>
+
+</metadata>
+
