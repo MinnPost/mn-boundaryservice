@@ -115,5 +115,19 @@ SHAPEFILES = {
         'notes': '',
         'encoding': '',
         'srid': ''
+    },
+    'Census tracts (2011)': {
+        'file': 'census-tracts/tiger_2011/tl_2011_27_tract.shp',
+        'singular': 'Census tract (2011)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['geoid']),
+        'namer': utils.simple_namer(['namelsad']),
+        'authority': 'U.S. Census Bureau Tiger lines',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 6, 22),
+        'href': 'http://www.census.gov/cgi-bin/geo/shapefiles2011/main',
+        'notes': '',
+        'encoding': '',
+        'srid': ''
     }
 }
