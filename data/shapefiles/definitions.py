@@ -129,5 +129,19 @@ SHAPEFILES = {
         'notes': '',
         'encoding': '',
         'srid': ''
+    },
+    'Counties (2010)': {
+        'file': 'counties/2010-ire-census/mn-counties-tl_2010_27_county10.shp',
+        'singular': 'County (2010)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['geoid10']),
+        'namer': utils.simple_namer(['name10']),
+        'authority': 'U.S. Census Bureau (via IRE)',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 6, 22),
+        'href': 'http://census.ire.org/data/bulkdata.html',
+        'notes': '',
+        'encoding': '',
+        'srid': ''
     }
 }
