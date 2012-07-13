@@ -257,5 +257,20 @@ SHAPEFILES = {
         'notes': 'Minor civil divisions are also considered cities and townships.',
         'encoding': '',
         'srid': ''
+    },
+    # Will take awhile
+    'Zipcodes (2010)': {
+        'file': 'zipcodes/2010-census/tl_2010_27_zcta510.shp',
+        'singular': 'Zipcode (2010)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['zcta5ce10']),
+        'namer': utils.simple_namer(['zcta5ce10']),
+        'authority': 'US Census Bureau',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 7, 13),
+        'href': 'ftp://ftp2.census.gov/geo/tiger/TIGER2010/ZCTA5/2010/',
+        'notes': 'ZIP Code Tabulation Areas (ZCTAs) are a statistical geographic entity produced by the U.S. Census Bureau for tabulating summary statistics from the 2010 Census, first developed for Census 2000. This entity was developed to overcome the difficulties in precisely defining the land area covered by each ZIP Code, which is necessary in order to accurately tabulate census data for that area.',
+        'encoding': '',
+        'srid': ''
     }
 }
