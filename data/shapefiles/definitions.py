@@ -299,5 +299,19 @@ SHAPEFILES = {
         'notes': 'Edited to add identifier.',
         'encoding': '',
         'srid': ''
+    },
+    'District courts (2008)': {
+        'file': 'district-courts/2008-mn_gis_leg/US_Judicial_Districts-edited.shp',
+        'singular': 'District court (2008)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['judicial']),
+        'namer': utils.simple_namer(['name']),
+        'authority': 'Minnesota Legislative Coordinating Commission - GIS Office',
+        'domain': 'World',
+        'last_updated': date(2012, 7, 13),
+        'href': 'http://gis.leg.mn/',
+        'notes': 'Emailed directly from the MN Leg GIS dept.  Edited to add more descriptive name.',
+        'encoding': '',
+        'srid': ''
     }
 }
