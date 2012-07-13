@@ -271,5 +271,19 @@ SHAPEFILES = {
         'notes': '',
         'encoding': '',
         'srid': ''
+    },
+    'Countries (2012)': {
+        'file': 'countries/2012-natural_earth_1.4.0/10m-admin-0-countries-edited.shp',
+        'singular': 'Country (2012)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['ne_10m_adm']),
+        'namer': utils.simple_namer(['admin']),
+        'authority': 'Natural Earth',
+        'domain': 'World',
+        'last_updated': date(2012, 7, 13),
+        'href': 'http://www.naturalearthdata.com/downloads/10m-cultural-vectors/',
+        'notes': 'Edited to remove columns to reduce file size, and to remove any non-ASCII characters.',
+        'encoding': '',
+        'srid': ''
     }
 }
