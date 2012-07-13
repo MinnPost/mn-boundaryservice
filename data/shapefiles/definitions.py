@@ -4,11 +4,11 @@ from boundaryservice import utils
 
 SHAPEFILES = {
     # This key should be the plural name of the boundaries in this set
-    'Minnesota State House districts (2002)': {
+    'State House districts (2002)': {
         # Path to a shapefile, relative to /data/shapefiles
-        'file': 'state-house-districts/2010/tl_2010_27_sldl10/tl_2010_27_sldl10.shp',
+        'file': 'state-house-districts/2002-census/tl_2010_27_sldl10/tl_2010_27_sldl10.shp',
         # Generic singular name for an boundary of from this set
-        'singular': 'Minnesota State House district (2002)',
+        'singular': 'State House district (2002)',
         # Should the singular name come first when creating canonical identifiers for this set?
         'kind_first': False,
         # Function which each feature wall be passed to in order to extract its "external_id" property
@@ -17,7 +17,7 @@ SHAPEFILES = {
         # Function which each feature will be passed to in order to extract its "name" property
         'namer': utils.simple_namer(['sldlst10'], normalizer=lambda x: x.lstrip('0')),
         # Authority that is responsible for the accuracy of this data
-        'authority': 'U.S. Census Bureau Tiger lines',
+        'authority': 'U.S. Census Bureau TIGER lines',
         # Geographic extents which the boundary set encompasses
         'domain': 'Minnesota',
         # Last time the source was checked for new data
@@ -32,13 +32,13 @@ SHAPEFILES = {
         # This is normally not necessary and can be left undefined or set to an empty string to maintain the default behavior
         'srid': ''
     },
-    'Minnesota State Senate districts (2002)': {
-        'file': 'state-senate-districts/2010/tl_2010_27_sldu10/tl_2010_27_sldu10.shp',
-        'singular': 'Minnesota State Senate district (2002)',
+    'State Senate districts (2002)': {
+        'file': 'state-senate-districts/2002-census/tl_2010_27_sldu10/tl_2010_27_sldu10.shp',
+        'singular': 'State Senate district (2002)',
         'kind_first': False,
         'ider': utils.simple_namer(['geoid10']),
         'namer': utils.simple_namer(['sldust10'], normalizer=lambda x: x.lstrip('0')),
-        'authority': 'U.S. Census Bureau Tiger lines',
+        'authority': 'U.S. Census Bureau TIGER lines',
         'domain': 'Minnesota',
         'last_updated': date(2012, 5, 3),
         'href': 'http://www.census.gov/cgi-bin/geo/shapefiles2010/main',
@@ -46,13 +46,13 @@ SHAPEFILES = {
         'encoding': '',
         'srid': ''
     },
-    'Minnesota State House districts': {
-        'file': 'state-house-districts/2012/L2012/L2012.shp',
-        'singular': 'Minnesota State House district',
+    'State House districts (2012)': {
+        'file': 'state-house-districts/2012-mn_leg_gis/L2012/L2012.shp',
+        'singular': 'State House district (2012)',
         'kind_first': False,
         'ider': utils.simple_namer(['id']),
         'namer': utils.simple_namer(['district'], normalizer=lambda x: x.lstrip('0')),
-        'authority': 'Minnesota GIS',
+        'authority': 'Minnesota Legislative Coordinating Commission - GIS Office',
         'domain': 'Minnesota',
         'last_updated': date(2012, 5, 3),
         'href': 'http://www.gis.leg.mn/redist2010/plans.html',
@@ -60,13 +60,13 @@ SHAPEFILES = {
         'encoding': '',
         'srid': ''
     },
-    'Minnesota State Senate districts': {
-        'file': 'state-senate-districts/2012/S2012/S2012.shp',
-        'singular': 'Minnesota State Senate district',
+    'State Senate districts (2012)': {
+        'file': 'state-senate-districts/2012-mn_leg_gis/S2012/S2012.shp',
+        'singular': 'State Senate district (2012)',
         'kind_first': False,
         'ider': utils.simple_namer(['id']),
         'namer': utils.simple_namer(['district'], normalizer=lambda x: x.lstrip('0')),
-        'authority': 'Minnesota GIS',
+        'authority': 'Minnesota Legislative Coordinating Commission - GIS Office',
         'domain': 'Minnesota',
         'last_updated': date(2012, 5, 3),
         'href': 'http://www.gis.leg.mn/redist2010/plans.html',
@@ -74,13 +74,13 @@ SHAPEFILES = {
         'encoding': '',
         'srid': ''
     },
-    'Congressional districts': {
-        'file': 'congressional-districts/2012/C2012/C2012.shp',
-        'singular': 'Congressional district',
+    'Congressional districts (2012)': {
+        'file': 'congressional-districts/2012-mn_leg_gis/C2012/C2012.shp',
+        'singular': 'Congressional district (2012)',
         'kind_first': False,
         'ider': utils.simple_namer(['id']),
         'namer': utils.simple_namer(['district']),
-        'authority': 'Minnesota GIS',
+        'authority': 'Minnesota Legislative Coordinating Commission - GIS Office',
         'domain': 'Minnesota',
         'last_updated': date(2012, 5, 3),
         'href': 'http://www.gis.leg.mn/redist2010/plans.html',
@@ -89,12 +89,12 @@ SHAPEFILES = {
         'srid': ''
     },
     'Congressional districts (2002)': {
-        'file': 'congressional-districts/2010/tl_2010_27_cd111/tl_2010_27_cd111.shp',
+        'file': 'congressional-districts/2002-census/tl_2010_27_cd111/tl_2010_27_cd111.shp',
         'singular': 'Congressional district (2002)',
         'kind_first': False,
         'ider': utils.simple_namer(['geoid10']),
         'namer': utils.simple_namer(['cd111fp'], normalizer=lambda x: x.lstrip('0')),
-        'authority': 'U.S. Census Bureau Tiger lines',
+        'authority': 'U.S. Census Bureau TIGER lines',
         'domain': 'Minnesota',
         'last_updated': date(2012, 5, 3),
         'href': 'http://www.census.gov/cgi-bin/geo/shapefiles2010/main',
@@ -102,13 +102,13 @@ SHAPEFILES = {
         'encoding': '',
         'srid': ''
     },
-    'School districts': {
-        'file': 'school-districts/tl_2010_27_unsd10/tl_2010_27_unsd10.shp',
-        'singular': 'School district',
+    'School districts (2010)': {
+        'file': 'school-districts/2010-census/tl_2010_27_unsd10.shp',
+        'singular': 'School district (2010)',
         'kind_first': False,
         'ider': utils.simple_namer(['geoid10']),
         'namer': utils.simple_namer(['name10']),
-        'authority': 'U.S. Census Bureau Tiger lines',
+        'authority': 'U.S. Census Bureau TIGER lines',
         'domain': 'Minnesota',
         'last_updated': date(2012, 5, 3),
         'href': 'http://www.census.gov/cgi-bin/geo/shapefiles2010/main',
@@ -117,12 +117,12 @@ SHAPEFILES = {
         'srid': ''
     },
     'Census tracts (2011)': {
-        'file': 'census-tracts/tiger_2011/tl_2011_27_tract.shp',
+        'file': 'census-tracts/2011-census/tl_2011_27_tract.shp',
         'singular': 'Census tract (2011)',
         'kind_first': False,
         'ider': utils.simple_namer(['geoid']),
         'namer': utils.simple_namer(['name']),
-        'authority': 'U.S. Census Bureau Tiger lines',
+        'authority': 'U.S. Census Bureau TIGER lines',
         'domain': 'Minnesota',
         'last_updated': date(2012, 6, 22),
         'href': 'http://www.census.gov/cgi-bin/geo/shapefiles2011/main',
@@ -144,9 +144,9 @@ SHAPEFILES = {
         'encoding': '',
         'srid': ''
     },
-    'State forests': {
-        'file': 'dnr/2009-state-forests/bdry_stforpy3.shp',
-        'singular': 'State forest',
+    'State forests (2009)': {
+        'file': 'state-forests/2009-mn-dnr/bdry_stforpy3.shp',
+        'singular': 'State forest (2009)',
         'kind_first': False,
         'ider': utils.index_namer('sft-'),
         'namer': utils.simple_namer(['name']),
@@ -158,9 +158,9 @@ SHAPEFILES = {
         'encoding': '',
         'srid': ''
     },
-    'State parks': {
-        'file': 'dnr/2002-state-parks/bdry_stprkpy3.shp',
-        'singular': 'State park',
+    'State parks (2002)': {
+        'file': 'state-parks/2002-mn-dnr/bdry_stprkpy3.shp',
+        'singular': 'State park (2002)',
         'kind_first': False,
         'ider': utils.index_namer('sp-'),
         'namer': utils.simple_namer(['long_name']),
@@ -172,9 +172,9 @@ SHAPEFILES = {
         'encoding': '',
         'srid': ''
     },
-    'National forests': {
-        'file': 'dnr/2008-national-forests/bdry_ntforpy3.shp',
-        'singular': 'National forest',
+    'National forests (2008)': {
+        'file': 'national-forests/2008-mn-dnr/bdry_ntforpy3.shp',
+        'singular': 'National forest (2008)',
         'kind_first': False,
         'ider': utils.index_namer('nf-'),
         'namer': utils.simple_namer(['name']),
@@ -187,12 +187,12 @@ SHAPEFILES = {
         'srid': ''
     },
     'Census places (2011)': {
-        'file': 'census-places/2011-places/tl_2011_27_place.shp',
+        'file': 'census-places/2011-census/tl_2011_27_place.shp',
         'singular': 'Census place (2011)',
         'kind_first': False,
         'ider': utils.simple_namer(['geoid']),
         'namer': utils.simple_namer(['name']),
-        'authority': 'U.S. Census Bureau Tiger lines',
+        'authority': 'U.S. Census Bureau TIGER lines',
         'domain': 'Minnesota',
         'last_updated': date(2012, 6, 22),
         'href': 'http://www.census.gov/cgi-bin/geo/shapefiles2011/main',
@@ -201,7 +201,7 @@ SHAPEFILES = {
         'srid': ''
     },
     'Neighborhoods (2012)': {
-        'file': 'zillow/2012-neighborhoods/ZillowNeighborhoods-MN.shp',
+        'file': 'neighborhoods/2012-zillow/ZillowNeighborhoods-MN.shp',
         'singular': 'Neighborhood (2012)',
         'kind_first': False,
         'ider': utils.simple_namer(['regionid']),
@@ -215,12 +215,12 @@ SHAPEFILES = {
         'srid': ''
     },
     'Reservation lands (2010)': {
-        'file': 'reservations/2010-air/amerind2010.shp',
+        'file': 'reservations/2010-mn_leg_gis/amerind2010.shp',
         'singular': 'Reservation land (2010)',
         'kind_first': False,
         'ider': utils.simple_namer(['id']),
         'namer': utils.simple_namer(['name']),
-        'authority': 'Minnesota GIS and US Census',
+        'authority': 'Minnesota Legislative Coordinating Commission - GIS Office',
         'domain': 'Minnesota',
         'last_updated': date(2012, 6, 22),
         'href': 'http://www.gis.leg.mn/metadata/amerind2010.htm',
@@ -230,12 +230,12 @@ SHAPEFILES = {
     },
     # Will take awhile
     'Voting precincts (2010)': {
-        'file': 'precincts/2010-precincts/vtd_20101029.shp',
+        'file': 'voting-precincts/2010-mn_leg_gis/vtd_20101029.shp',
         'singular': 'Voting precinct (2010)',
         'kind_first': False,
         'ider': utils.simple_namer(['district', 'precinct_n']),
         'namer': utils.simple_namer(['precinct']),
-        'authority': 'Minnesota GIS and Minnesota Secretary of State',
+        'authority': 'Minnesota Legislative Coordinating Commission - GIS Office and Minnesota Secretary of State',
         'domain': 'Minnesota',
         'last_updated': date(2012, 6, 22),
         'href': 'http://www.gis.leg.mn/metadata/vtd2010.htm',
@@ -245,7 +245,7 @@ SHAPEFILES = {
     },
     # Will take awhile
     'Minor civil divisions (2010)': {
-        'file': 'minor-civil-divisions/2010-mcd/mcd2010.shp',
+        'file': 'minor-civil-divisions/2010-mn_leg_gis/mcd2010.shp',
         'singular': 'Minor civil division (2010)',
         'kind_first': False,
         'ider': utils.simple_namer(['id']),
@@ -264,7 +264,7 @@ SHAPEFILES = {
         'kind_first': False,
         'ider': utils.simple_namer(['stusps']),
         'namer': utils.simple_namer(['name']),
-        'authority': 'US Census Bureau',
+        'authority': 'U.S. Census Bureau TIGER lines',
         'domain': 'United States of America',
         'last_updated': date(2012, 7, 13),
         'href': 'ftp://ftp2.census.gov/geo/tiger/TIGER2011/STATE/',
@@ -307,7 +307,7 @@ SHAPEFILES = {
         'ider': utils.simple_namer(['judicial']),
         'namer': utils.simple_namer(['name']),
         'authority': 'Minnesota Legislative Coordinating Commission - GIS Office',
-        'domain': 'World',
+        'domain': 'Minnesota',
         'last_updated': date(2012, 7, 13),
         'href': 'http://gis.leg.mn/',
         'notes': 'Emailed directly from the MN Leg GIS dept.  Edited to add more descriptive name.',
