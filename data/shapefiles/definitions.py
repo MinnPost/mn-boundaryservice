@@ -285,5 +285,19 @@ SHAPEFILES = {
         'notes': 'Edited to remove columns to reduce file size, and to remove any non-ASCII characters.',
         'encoding': '',
         'srid': ''
+    },
+    'Timezones (2012)': {
+        'file': 'timezones/2012-natural_earth_beta_3/ne_10m_time_zones_beta_3-edited.shp',
+        'singular': 'Timezone (2012)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['gid']),
+        'namer': utils.simple_namer(['time_zone']),
+        'authority': 'Natural Earth',
+        'domain': 'World',
+        'last_updated': date(2012, 7, 13),
+        'href': 'http://www.naturalearthdata.com/',
+        'notes': 'Edited to add identifier.',
+        'encoding': '',
+        'srid': ''
     }
 }
