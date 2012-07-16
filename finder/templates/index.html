@@ -19,16 +19,21 @@
 <div id="outside">Outside {{ settings.EXAMPLE_SCOPE }}? <a href="javascript:void(0)" id="use-default-location">Jump to {{ settings.EXAMPLE_PLACE }}</a> or drag the pin on the map!</div>
 <div id="wrap">
     <div id="page-links">
-        <a href="javascript:switch_page('demo')">Demo</a>&nbsp;&nbsp;
-        <a href="javascript:switch_page('api')">API</a>&nbsp;&nbsp;
-        <a href="javascript:switch_page('src')">Source</a>&nbsp;&nbsp;
-        <a href="javascript:switch_page('about')">About</a>&nbsp;&nbsp;
+        <a href="#demo">Demo</a>
+        <a href="#datasets">Data Sets</a>
+        <a href="#api">API</a>
+        <a href="#src">Source</a>
+        <a href="#about">About</a>
     </div>
 
     <h1 id="page-title">{{ settings.EXAMPLE_SCOPE }} Boundaries</h1>
 
     <div id="demo-page" class="page-content">
         {% include '_demo.html' %}
+    </div>
+    
+    <div id="datasets-page" class="page-content">
+        {% include '_datasets.html' %}
     </div>
 
     <div id="api-page" class="page-content">

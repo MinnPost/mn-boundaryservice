@@ -342,6 +342,10 @@ function switch_page(page_id) {
     } else {
         hide_outside();
     }
+    
+    // Highlight current link
+    $('#page-links a').removeClass('active-page');
+    $('#page-links a[href=#' + page_id + ']').addClass('active-page');
 }
 
 
@@ -441,11 +445,18 @@ $(document).ready(function() {
     $('#location-form input[type=text]').focus(search_focused);
     $('#location-form').submit(address_search)
 
+    // Handle hash
     if (window.location.hash != "") {
         switch_page(window.location.hash.substring(1));
     } else {
         switch_page("demo");
     }
+    
+    // Handle navigation
+    $('#page-links a').click(function(e) {
+      e.preventDefault();
+      switch_page($(this).attr('href').substring(1));
+    });
 });
 
 

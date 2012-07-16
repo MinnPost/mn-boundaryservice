@@ -52,6 +52,13 @@ h1, h2, h3, h4, h5 {
   margin: 0 auto; }
   #wrap #page-links {
     float: right; }
+  #wrap #page-links a {
+    margin-right: .5em; }
+  #wrap #page-links a:visited {
+    color: #00E; }
+  #wrap #page-links a.active-page {
+    text-decoration: none;
+    font-weight: bold; }
   #wrap #page-title {
     border-bottom: 3px double #dfdfdf;
     padding-top: 48px;
