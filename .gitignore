@@ -3,5 +3,5 @@
 .DS_Store
 boundaryservice
 settings_override.py
+gunicorn_startup.sh
 /static
-gunicorn.startup_sh
