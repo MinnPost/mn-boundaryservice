@@ -433,6 +433,38 @@ function stop_loading() {
     return false;
 }
 
+function get_datasets() {
+    var datasets = {};
+    var sets_url = '/1.0/boundary-set/?limit=100';
+    var d;
+    var output = [];
+    
+    // Go through all datasets.  There may be lots so lets push up
+    // the limit.
+    $.getJSON(sets_url, function(r) {
+        if (typeof r.objects !== undefined) {
+            for (d in r.objects) {
+                output.push('<div class="dataset-object">');
+                output.push('<h3>' + r.objects[d].name + '</h3>');
+                output.push('<table class="dataset-table"><tbody>');
+                output.push('<tr><td>Domain</td><td>' + r.objects[d].domain + '</td></tr>');
+                output.push('<tr><td>Boundary count</td><td>' + r.objects[d].count + '</td></tr>');
+                output.push('<tr><td>Source</td><td><a href="' + r.objects[d].href +'" target="_blank">' + r.objects[d].authority + '</a></td></tr>');
+                output.push('<tr><td>Resource URI</td><td><a href="' + r.objects[d].resource_uri +'">' + r.objects[d].resource_uri + '</a></td></tr>');
+                output.push('<tr><td>Last updated</td><td>' + r.objects[d].last_updated + '</td></tr>');
+                output.push('<tr><td>Notes</td><td>' + r.objects[d].notes + '</td></tr>');
+                output.push('</tbody></table>');
+                output.push('</div>');
+            }
+        }
+        else {
+            output.push('<p>No data sets found.</p>');
+        }
+
+        $('#datasets-results').html(output.join(' '));
+    });
+}
+
 $(document).ready(function() {
     stop_loading();
 
@@ -457,6 +489,9 @@ $(document).ready(function() {
       e.preventDefault();
       switch_page($(this).attr('href').substring(1));
     });
+    
+    // Load up datasets
+    get_datasets();
 });
 
 

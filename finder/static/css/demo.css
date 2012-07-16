@@ -2,6 +2,11 @@ pre {
   font-family: monospace; }
 h1, h2, h3, h4, h5 {
   font-family: Georgia, "Times New Roman", serif; }
+h2 {
+  margin-top: .5em; }
+h4 {
+  font-weight: bold;
+  margin-top: 1em; }
 
   body {
     background: #ffffff;
@@ -85,6 +90,8 @@ h1, h2, h3, h4, h5 {
       width: 100%; }
     #wrap .page-content table tr:nth-child(even) {
       background: #eff1f3; }
+    #wrap .page-content table td {
+      padding: 3px 5px; }
     #wrap .page-content #form-wrapper {
       width: 100%;
       float: left;
@@ -148,8 +155,10 @@ h1, h2, h3, h4, h5 {
     #wrap .page-content #boundaries td {
       border: 0;
       width: 50%;
-      padding: 10px 0;
+      padding: 7px 5px;
       margin: 0; }
+    #wrap .page-content .dataset-table td {
+      width: 50%; }
   #wrap #loading {
     text-align: center;
     font-weight: bold;}
