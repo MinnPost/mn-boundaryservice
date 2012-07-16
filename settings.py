@@ -166,29 +166,29 @@ CACHES = {
 EXAMPLE_SCOPE = 'Minnesota'
 
 # Example boundary set values.
-EXAMPLE_BOUNDARY_SET = 'Minnesota State House district'
-EXAMPLE_BOUNDARY_SETS = 'Minnesota State House districts' # plural
-EXAMPLE_BOUNDARY_SET_CODE = 'minnesota-state-house-districts'
-EXAMPLE_BOUNDARY_SET_CODE_BIS = 'minnesota-state-house-districts-2002' # "bis" is latin for "again"
+EXAMPLE_BOUNDARY_SET = 'State House district (2012)'
+EXAMPLE_BOUNDARY_SETS = 'State House districts (2012)' # plural
+EXAMPLE_BOUNDARY_SET_CODE = 'state-house-districts-2012'
+EXAMPLE_BOUNDARY_SET_CODE_BIS = 'state-house-districts-2002' # "bis" is latin for "again"
 EXAMPLE_BOUNDARY_SET_RESPONSE = '''
 {
-  authority: "Minnesota GIS",
+  authority: "Minnesota Legislative Coordinating Commission - GIS Office",
   boundaries: [ .. ],
   count: 134,
   domain: "Minnesota",
   href: "http://www.gis.leg.mn/redist2010/plans.html",
   last_updated: "2012-05-03",
   metadata_fields: [ .. ],
-  name: "Minnesota State House districts",
+  name: "State House districts (2012)",
   notes: "These districts were defined in 2012.",
-  resource_uri: "/1.0/boundary-set/minnesota-state-house-districts/",
-  slug: "minnesota-state-house-districts"
+  resource_uri: "/1.0/boundary-set/state-house-districts-2012/",
+  slug: "state-house-districts-2012"
 }
 ''' # an example JSON response
 
 # Example boundary (within a boundary set)
-EXAMPLE_BOUNDARY = 'Congressional district 4'
-EXAMPLE_BOUNDARY_CODE = '4-congressional-district'
+EXAMPLE_BOUNDARY = '4th Congressional district (2012)'
+EXAMPLE_BOUNDARY_CODE = '4-congressional-district-2012'
 EXAMPLE_BOUNDARY_RESPONSE = '''
 {
   centroid: {
@@ -199,13 +199,13 @@ EXAMPLE_BOUNDARY_RESPONSE = '''
     type: "Point"
   },
   external_id: "180077",
-  kind: "Congressional district",
+  kind: "Congressional district (2012)",
   metadata: { .. },
   name: "4",
-  resource_uri: "/1.0/boundary/4-congressional-district/",
-  set: "/1.0/boundary-set/congressional-districts/",
+  resource_uri: "/1.0/boundary/4-congressional-district-2012/",
+  set: "/1.0/boundary-set/congressional-districts-2012/",
   simple_shape: { .. },
-  slug: "4-congressional-district"
+  slug: "4-congressional-district-2012"
 }
 ''' # an example JSON response
 
