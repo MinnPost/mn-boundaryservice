@@ -94,3 +94,9 @@
 
 <p><code>http://{{ settings.API_DOMAIN }}/1.0/boundary/?format=jsonp&callback=func</code></p>
 
+<h3>API Keys</h3>
+
+<p>By default all anonymous traffic is throttled.  With an API key and username, throttling will be turned off.  Please contact us to receive an API key and username.  You can use the this in your calls like the following:</p>
+
+<p><code>http://{{ settings.API_DOMAIN }}/1.0/boundary/{{ settings.EXAMPLE_BOUNDARY_CODE }}/?username=YOUR_USERNAME&api_key=YOUR_API_KEY</code></p>
+
