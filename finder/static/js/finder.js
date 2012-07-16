@@ -34,6 +34,8 @@ var displayed_polygon = null;
 
 var boundaries = new Array();
 
+var datasets = null;
+
 function init_map(lat, lng) {
     if (map == null) {
         var ll = new L.LatLng(lat, lng);
@@ -346,6 +348,11 @@ function switch_page(page_id) {
     // Highlight current link
     $('#page-links a').removeClass('active-page');
     $('#page-links a[href=#' + page_id + ']').addClass('active-page');
+    
+    // Get datasets for specific page
+    if (page_id == 'datasets') {
+      get_datasets();
+    }
 }
 
 
@@ -434,15 +441,20 @@ function stop_loading() {
 }
 
 function get_datasets() {
-    var datasets = {};
     var sets_url = '/1.0/boundary-set/?limit=100';
     var d;
     var output = [];
+    
+    // Check if we already loaded datasets
+    if (datasets !== null) {
+        return;
+    } 
     
     // Go through all datasets.  There may be lots so lets push up
     // the limit.
     $.getJSON(sets_url, function(r) {
         if (typeof r.objects !== undefined) {
+            datasets = r.objects;
             for (d in r.objects) {
                 output.push('<div class="dataset-object">');
                 output.push('<h3>' + r.objects[d].name + '</h3>');
@@ -489,9 +501,6 @@ $(document).ready(function() {
       e.preventDefault();
       switch_page($(this).attr('href').substring(1));
     });
-    
-    // Load up datasets
-    get_datasets();
 });
 
 
