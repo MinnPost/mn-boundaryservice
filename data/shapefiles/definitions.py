@@ -1,6 +1,6 @@
 from datetime import date
-
 from boundaryservice import utils
+import processing
 
 SHAPEFILES = {
     # This key should be the plural name of the boundaries in this set
@@ -324,6 +324,20 @@ SHAPEFILES = {
         'domain': 'Minnesota',
         'last_updated': date(2012, 7, 18),
         'href': 'ftp://ftp2.census.gov/geo/tiger/TIGER2010/ZCTA5/2010/',
+        'notes': '',
+        'encoding': '',
+        'srid': ''
+    },
+    'School districts (2012)': {
+        'file': 'school-districts/2012-mngeo/sd12.shp',
+        'singular': 'School district (2012)',
+        'kind_first': False,
+        'ider': processing.simple_index_namer(['sdnum']),
+        'namer': processing.simple_index_namer(['sdnum', 'sdname']),
+        'authority': 'MN Geo and Minnesota Department of Education',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 7, 18),
+        'href': 'http://www.mngeo.state.mn.us/chouse/metadata/sd12.html',
         'notes': '',
         'encoding': '',
         'srid': ''
