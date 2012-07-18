@@ -313,5 +313,19 @@ SHAPEFILES = {
         'notes': 'Emailed directly from the MN Leg GIS dept.  Edited to add more descriptive name.',
         'encoding': '',
         'srid': ''
+    },
+    'ZIP codes (2010)': {
+        'file': 'zipcodes/2010-census/tl_2010_27_zcta510.shp',
+        'singular': 'Zip code (2010)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['ZCTA5CE10']),
+        'namer': utils.simple_namer(['ZCTA5CE10']),
+        'authority': 'U.S. Census Bureau TIGER lines',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 7, 18),
+        'href': 'ftp://ftp2.census.gov/geo/tiger/TIGER2010/ZCTA5/2010/',
+        'notes': '',
+        'encoding': '',
+        'srid': ''
     }
 }
