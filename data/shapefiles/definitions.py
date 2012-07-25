@@ -341,5 +341,34 @@ SHAPEFILES = {
         'notes': '',
         'encoding': '',
         'srid': ''
+    },
+    # Will take awhile
+    'Voting precincts (2012)': {
+        'file': 'voting-precincts/2012-mn_sos/vtd2012_primary_rev20120720.shp',
+        'singular': 'Voting precinct (2012)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['vtd']),
+        'namer': utils.simple_namer(['pctname']),
+        'authority': 'Minnesota Secretary of State',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 7, 24),
+        'href': 'http://www.gis.leg.mn/metadata/vtd2012.htm',
+        'notes': '',
+        'encoding': '',
+        'srid': ''
+    },
+    'County Commissioner districts (2012)': {
+        'file': 'county-commissioner/2012-mn_sos/vtd2012_county_commissioner.shp',
+        'singular': 'County Commissioner district (2012)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['ccd_id']),
+        'namer': utils.simple_namer(['ccd_id']),
+        'authority': 'Minnesota Secretary of State',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 7, 24),
+        'href': 'http://www.gis.leg.mn/metadata/vtd2012.htm',
+        'notes': 'This dataset was derived from the 2012 voting precincts dataset.',
+        'encoding': '',
+        'srid': ''
     }
 }
