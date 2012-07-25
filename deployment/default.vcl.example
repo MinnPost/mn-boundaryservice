@@ -5,7 +5,7 @@
 
 # Default backend definition.  Set this to point to your content
 # server.
-#         
+#
 backend default {
     .host = "127.0.0.1";
     .port = "8080";
@@ -24,23 +24,23 @@ sub vcl_recv {
             set req.http.Accept-Encoding = "gzip";
         } elsif (req.http.Accept-Encoding ~ "deflate") {
             set req.http.Accept-Encoding = "deflate";
-        } else {  
-            # unknown algorithm  
+        } else {
+            # unknown algorithm
             remove req.http.Accept-Encoding;
         }
     }
 }
 
 sub vcl_fetch {
-    # static files always cached 
+    # static files always cached
     if (req.url ~ "^/static") {
        unset beresp.http.set-cookie;
-       return (deliver);  
+       return (deliver);
     }
-
+    
     # pass through for anything with a session/csrftoken set
     if (beresp.http.set-cookie ~ "sessionid" || beresp.http.set-cookie ~ "csrftoken") {
-       return (pass);
+       return (hit_for_pass);
     } else {
        return (deliver);
     }

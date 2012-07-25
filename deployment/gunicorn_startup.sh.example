@@ -17,6 +17,7 @@ APPDIR=/home/ubuntu/django-projects/mn-boundaryservice
 VIRTENVDIR=boundaryservice/bin
 NUM_WORKERS=3
 USER=ubuntu
+ADDRESS=127.0.0.1:8000
 
 # Load virtual environment
 cd $APPDIR
@@ -28,5 +29,6 @@ test -d $LOGDIR || mkdir -p $LOGDIR
 
 # Start gunicorn for django
 exec $VIRTENVDIR/gunicorn_django -w $NUM_WORKERS \
+    -b $ADDRESS \
     --user=$USER --log-level=debug \
     --log-file=$LOGFILE 2>>$LOGFILE

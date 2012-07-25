@@ -1,9 +1,9 @@
 server {
   listen 80;
-  server_name boundaryservice.minnpost.com;
+  server_name boundaries.minnpost.com;
   root /home/ubuntu/django-projects/mn-boundaryservice;
   
-  location /static/ {
+  location /media/ {
     if ($query_string) {
       expires max;
     }
