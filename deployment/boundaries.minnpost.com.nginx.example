@@ -1,0 +1,29 @@
+server {
+  listen 80;
+  server_name boundaryservice.minnpost.com;
+  root /home/ubuntu/django-projects/mn-boundaryservice;
+  
+  location /static/ {
+    if ($query_string) {
+      expires max;
+    }
+  }
+  
+  location /admin/media/ {
+    root /home/ubuntu/django-projects/mn-boundaryservice/boundaryservice/lib/python2.6/site-packages/django/contrib;
+  }
+  
+  location / {
+    proxy_pass_header Server;
+    proxy_set_header Host $http_host;
+    proxy_redirect off;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Scheme $scheme;
+    proxy_connect_timeout 30;
+    proxy_read_timeout 30;
+    proxy_pass http://localhost:8000/;
+  }
+  
+  # what to serve if upstream is not available or crashes
+  error_page 500 502 503 504 /media/50x.html;
+}
