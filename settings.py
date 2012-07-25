@@ -5,6 +5,8 @@ SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 # Django settings for project.
 
+# Debug off my default.  When Debug is off, static files are not served up
+# https://docs.djangoproject.com/en/dev/howto/static-files/
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
