@@ -398,5 +398,19 @@ SHAPEFILES = {
         'notes': 'This dataset was derived from the 2012 voting precincts dataset.',
         'encoding': '',
         'srid': ''
+    },
+    'Park Commissioner districts (2012)': {
+        'file': 'park-districts/2012-mn_sos/vtd2012_park_districts.shp',
+        'singular': 'Park Commissioner district (2012)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['parkdist']),
+        'namer': utils.simple_namer(['parkdist']),
+        'authority': 'Minnesota Secretary of State',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 7, 24),
+        'href': 'http://www.gis.leg.mn/metadata/vtd2012.htm',
+        'notes': 'This dataset was derived from the 2012 voting precincts dataset.',
+        'encoding': '',
+        'srid': ''
     }
 }
