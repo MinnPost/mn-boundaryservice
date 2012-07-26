@@ -370,5 +370,33 @@ SHAPEFILES = {
         'notes': 'This dataset was derived from the 2012 voting precincts dataset.',
         'encoding': '',
         'srid': ''
+    },
+    'Hospital districts (2012)': {
+        'file': 'hospitals/2012-mn_sos/vtd2012_hospital_districts.shp',
+        'singular': 'Hospital district (2012)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['hospdist']),
+        'namer': utils.simple_namer(['hospdist']),
+        'authority': 'Minnesota Secretary of State',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 7, 24),
+        'href': 'http://www.gis.leg.mn/metadata/vtd2012.htm',
+        'notes': 'This dataset was derived from the 2012 voting precincts dataset.',
+        'encoding': '',
+        'srid': ''
+    },
+    'District courts (2012)': {
+        'file': 'district-courts/2012-mn_sos/vtd2012_judicial_district.shp',
+        'singular': 'District court (2012)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['juddist']),
+        'namer': utils.simple_namer(['juddist']),
+        'authority': 'Minnesota Secretary of State',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 7, 24),
+        'href': 'http://www.gis.leg.mn/metadata/vtd2012.htm',
+        'notes': 'This dataset was derived from the 2012 voting precincts dataset.',
+        'encoding': '',
+        'srid': ''
     }
 }
