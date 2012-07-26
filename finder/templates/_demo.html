@@ -8,6 +8,7 @@
     <a href="javascript:void(0)" id="did-you-mean" class="disabled-link">Did you mean...?</a>
     <div id="alt-addresses"></div>
 </div>
+
 <div id="georesults" class="clearfix">
     <div id="map_canvas"></div>
     <p id="resultinfo"> 
@@ -18,4 +19,13 @@
     </p>
 </div>
 
-<div id="area-lookup"></div>
+<div id="area-lookup" class="hidden">
+  <h3>This location is within:</h3>
+  <table id="boundaries" border="0" cellpadding="0" cellspacing="0">
+    <thead>
+      <tr><th>Dataset</th><th>Boundary</th></tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>

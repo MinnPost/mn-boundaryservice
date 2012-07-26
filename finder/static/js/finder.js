@@ -119,7 +119,7 @@ function geolocate() {
 }
 
 function geolocation_success(position) {
-    process_location(position.coords.latitude, position.coords.longitude)
+    //process_location(position.coords.latitude, position.coords.longitude)
     ll = new L.LatLng(position.coords.latitude, position.coords.longitude);
 
     geocode(ll);
@@ -212,8 +212,7 @@ function alt_addresses(results) {
 
 // Use boundary service to lookup what areas the location falls within
 function get_boundaries(lat, lng) {
-    var output = '';
-    var query_url = '/1.0/boundary/?limit=100&contains=' + lat + ',' + lng + '';
+    var query_url = '/1.0/boundary/?limit=10&contains=' + lat + ',' + lng + '';
 
     displayed_kind = null;
     for_display = null;
@@ -228,32 +227,55 @@ function get_boundaries(lat, lng) {
 
     // Clear old boundaries
     boundaries.length = 0;
+    
+    $('#area-lookup').fadeIn();
+    $('#boundaries tbody').html('');
 
-    $.getJSON(query_url, function(data) {
+    load_boundaries_paged(query_url, true);
+}
+
+/**
+ * Retrieves boundaries by URL and creates 
+ * link to more if needed.
+ */
+function load_boundaries_paged(url) {
+    var output = '';
+    start_loading();
+    $('.add-more').remove();
+        
+    $.getJSON(url, function(data) {
         // Check for results
         if (typeof data.meta != 'undefined' && data.meta.total_count > 0) {
-          output += '<h3>This location is within:</h3><table id="boundaries" border="0" cellpadding="0" cellspacing="0">';
-        
-          $.each(data.objects, function(i, obj) {
-              boundaries[obj.slug] = obj;
-              output += '<tr id="' + obj.slug + '"><td>' + obj.kind + '</td><td><strong><a href="javascript:display_boundary(\'' + obj.slug + '\');">' + obj.name + '</a></strong></td></td>';
-  
-              // Try to display a new polygon of the same kind as the last shown
-              if (displayed_kind != null && obj.kind == displayed_kind) {
-                  for_display = obj; 
-              }
-          });
-          output += '</table>';
-  
-          if (for_display != null) {
-              display_boundary(for_display.slug, true);
-          }
+            $.each(data.objects, function(i, obj) {
+                boundaries[obj.slug] = obj;
+                output += '<tr id="' + obj.slug + '"><td>' + obj.kind + '</td><td><strong><a href="javascript:display_boundary(\'' + obj.slug + '\');">' + obj.name + '</a></strong></td></td>';
+    
+                // Try to display a new polygon of the same kind as the last shown
+                if (displayed_kind != null && obj.kind == displayed_kind) {
+                    for_display = obj;
+                }
+            });
+    
+            if (for_display != null) {
+                display_boundary(for_display.slug, true);
+            }
         }
         else {
-          output += '<h3>No results found.</h3>';
+            output += '<tr><td><h3>No results found.</h3></td></tr>';
         }
         
-        $('#area-lookup').html(output);
+        $('#boundaries tbody').append(output);
+        $("#boundaries #" + displayed_slug).addClass("selected");
+        
+        // Check for paging
+        if (data.meta.next !== undefined && data.meta.next !== '' && data.meta.next !== null) {
+          $('<a>Load more datasets</a>')
+            .attr('href', '#').addClass('add-more')
+            .click(function(e) {
+              e.preventDefault();
+              load_boundaries_paged(data.meta.next);
+          }).appendTo('#area-lookup');
+        }
         stop_loading();
     });
 }
@@ -304,6 +326,8 @@ function display_boundary(slug, no_fit) {
     displayed_slug = slug;
     map.addLayer(displayed_polygon);
 
+    // The DOM does not contain these yet so this does
+    // not work.
     $("#boundaries #" + slug).addClass("selected");
 
     if (!no_fit) {
