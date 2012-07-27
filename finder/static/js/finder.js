@@ -456,13 +456,13 @@ function address_search() {
 }
 
 function start_loading() {
-    $("#loading").fadeIn();
+    $(".loading").fadeIn();
 
     return false;
 }
 
 function stop_loading() {
-    $("#loading").fadeOut();
+    $(".loading").fadeOut();
 
     return false;
 }
@@ -484,15 +484,17 @@ function get_datasets() {
             datasets = r.objects;
             for (d in r.objects) {
                 output.push('<div class="dataset-object">');
-                output.push('<h3>' + r.objects[d].name + '</h3>');
-                output.push('<table class="dataset-table"><tbody>');
+                output.push('<h3>' + r.objects[d].name);
+                output.push('<a href="#" class="expand-dataset">more info</a>');
+                output.push('</h3>');
+                output.push('<div class="table-container collapsed"><table class="dataset-table"><tbody>');
                 output.push('<tr><td>Domain</td><td>' + r.objects[d].domain + '</td></tr>');
                 output.push('<tr><td>Boundary count</td><td>' + r.objects[d].count + '</td></tr>');
                 output.push('<tr><td>Source</td><td><a href="' + r.objects[d].href +'" target="_blank">' + r.objects[d].authority + '</a></td></tr>');
                 output.push('<tr><td>Resource URI</td><td><a href="' + r.objects[d].resource_uri +'">' + r.objects[d].resource_uri + '</a></td></tr>');
                 output.push('<tr><td>Last updated</td><td>' + r.objects[d].last_updated + '</td></tr>');
                 output.push('<tr><td>Notes</td><td>' + r.objects[d].notes + '</td></tr>');
-                output.push('</tbody></table>');
+                output.push('</tbody></table></div>');
                 output.push('</div>');
             }
         }
@@ -501,6 +503,21 @@ function get_datasets() {
         }
 
         $('#datasets-results').html(output.join(' '));
+        
+        // Handle collapsing
+        $('.expand-dataset').click(function(e) {
+            e.preventDefault();
+            var $t = $(this).parent().parent().find('.table-container');
+            if ($t.hasClass('collapsed')) {
+                $t.slideDown();
+                $(this).html('collapse');
+            }
+            else {
+                $t.slideUp();
+                $(this).html('more info');
+            }
+            $t.toggleClass('collapsed');
+        });
     });
 }
 
