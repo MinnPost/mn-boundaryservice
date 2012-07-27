@@ -1,5 +1,14 @@
+/**
+ * Main CSS file for the Finder app.
+ */
+ 
+/**
+ * Basics.
+ */
 pre {
-  font-family: monospace
+  font-family: monospace;
+  background: #EEEEEE;
+  padding: 3px;
 }
 h1,
 h2,
@@ -9,60 +18,101 @@ h5 {
   font-family: Georgia, "Times New Roman", serif
 }
 h2 {
-  margin-top: .5em
+  margin-top: .5em;
+}
+h3 {
+  margin-top: 1em;
 }
 h4 {
   font-weight: bold;
   margin-top: 1em;
 }
+table {
+  width: 100%
+}
+code {
+  background: #EEEEEE;
+  padding: 3px;
+}
+p {
+  margin-top: 10px;
+}
+
+/**
+ * Utility
+ */
+.clearfix {
+  display: inline-block
+}
+html[xmlns] .clearfix {
+  display: block
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+* html .clearfix {
+  height: 1%
+}
+.hidden {
+  display: none;
+}
+
+/**
+ * Layout and media queries.
+ */
 body {
   background: #ffffff;
   margin: 0 auto;
   padding-top: 0;
 }
 body form#location-form input[type="text"] {
-  width: 380px
+  width: 380px;
 }
 body #outside {
-  width: 648px
+  width: 648px;
 }
 @media only screen and (min-width: 1212px) { 
-    body {
-      padding-top: 0
-    }
-    body form#location-form input[type="text"] {
-      width: 380px
-    }
-    body #outside {
-      width: 1068px
-    }
+  body {
+    padding-top: 0;
+  }
+  body form#location-form input[type="text"] {
+    width: 380px;
+  }
+  body #outside {
+    width: 1068px
+  }
 }
 @media only screen and (max-width: 767px) and (min-width: 480px) { 
-    body {
-      padding-top: 0
-    }
-    body form#location-form input[type="text"] {
-      width: 300px
-    }
-    body #outside {
-      width: 396px
-    }
+  body {
+    padding-top: 0;
+  }
+  body form#location-form input[type="text"] {
+    width: 300px;
+  }
+  body #outside {
+    width: 396px;
+  }
 }
 @media only screen and (max-width: 479px) { 
-    body {
-      padding-top: 0
-    }
-    body form#location-form input[type="text"] {
-      width: 150px
-    }
-    body #page-title {
-      font-size: 48px;
-      line-height: 52px;
-      letter-spacing: -0.5px;
-    }
-    body #outside {
-      width: 228px
-    }
+  body {
+    padding-top: 0;
+  }
+  body form#location-form input[type="text"] {
+    width: 150px;
+  }
+  body #page-title {
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -0.5px;
+  }
+  body #outside {
+    width: 228px;
+  }
 }
 #outside {
   line-height: 140%;
@@ -73,66 +123,124 @@ body #outside {
   display: none;
 }
 #wrap {
-  margin: 0 auto
+  margin: 0 auto;
 }
-#wrap .page-content {
-  display: none
+
+/**
+ * General styles for app.
+ */
+.page-content {
+  display: none;
 }
-#wrap .page-content #boundaries .selected {
+.add-more {
+  padding: 1em;
+  margin-top: 2em;
+  display: block;
+  text-align: center;
+  background-color: #DADADA;
+  font-weight: bold;
+}
+table tr:nth-child(even) {
+  background: #eff1f3
+}
+table td {
+  padding: 3px 5px;
+}
+.loading {
+  padding: 1em;
+  margin-top: 2em;
+  text-align: center;
+  font-weight: bold;
+  background-color: #FFA64D;
+}
+.error {
+  padding: 1em;
+  margin-top: 2em;
+  text-align: center;
+  font-weight: bold;
+  background-color: #FF4D4D;
+}
+
+/**
+ * Navigation
+ */
+#wrap #page-links {
+  float: right;
+}
+#wrap #page-links a.active-page {
+  text-decoration: none;
+  font-weight: bold;
+}
+#wrap #page-links a {
+  margin-right: .5em
+}
+#wrap #page-links a:visited {
+  color: #00E
+}
+
+/**
+ * Footer
+ */
+#wrap #footer {
+  border-top: 3px double #dfdfdf;
+  padding-top: 24px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  clear: both;
+}
+
+/**
+ * Demo page
+ */
+#boundaries .selected {
   background: #6AAFBD
 }
-#wrap .page-content .dataset-table td {
-  width: 50%
+#boundaries thead {
+  display: none;
 }
-#wrap .page-content #boundaries thead {
-  display: none
-}
-#wrap .page-content .expand-dataset {
-  font-size: .5em
-}
-#wrap .page-content #boundaries td {
+#boundaries td {
   border: 0;
   width: 50%;
   padding: 7px 5px;
   margin: 0;
 }
-#wrap .page-content #form-wrapper {
+#form-wrapper {
   width: 100%;
   float: left;
   padding: 10px 0;
   position: relative;
 }
-#wrap .page-content #form-wrapper #did-you-mean.highlight {
+#form-wrapper #did-you-mean.highlight {
   background: #343434;
   color: #fff;
   padding: 5px;
 }
-#wrap .page-content #form-wrapper #use-current-location {
-  display: none
+#form-wrapper #use-current-location {
+  display: none;
 }
-#wrap .page-content #form-wrapper #use-current-location,
-#wrap .page-content #form-wrapper #did-you-mean,
-#wrap .page-content #form-wrapper #not-where-i-am {
+#form-wrapper #use-current-location,
+#form-wrapper #did-you-mean,
+#form-wrapper #not-where-i-am {
   margin: 0 10px 0 0;
   padding: 5px;
   margin-left: -5px;
 }
-#wrap .page-content #form-wrapper form#location-form {
-  display: none
+#form-wrapper form#location-form {
+  display: none;
 }
-#wrap .page-content #form-wrapper form#location-form input[type="text"] {
+#form-wrapper form#location-form input[type="text"] {
   margin: 5px 0 10px 0;
   padding: 4px;
   height: 20px;
   font-size: 1em;
   border: 1px solid #ccc;
 }
-#wrap .page-content #form-wrapper .disabled-link {
+#form-wrapper .disabled-link {
   text-decoration: none;
   color: #ccc;
   cursor: default;
 }
-#wrap .page-content #form-wrapper #alt-addresses {
+#form-wrapper #alt-addresses {
   background: #fff;
   position: absolute;
   top: 80px;
@@ -152,112 +260,36 @@ body #outside {
   /* Standard */
   box-shadow: 2px 2px 10px #444;
 }
-#wrap .page-content #georesults {
+#georesults {
   background-color: #fff;
   width: 100%;
   padding: 10px 0;
 }
-#wrap .page-content #georesults #map_canvas {
+#georesults #map_canvas {
   width: 100%;
   height: 280px;
   margin: 0 auto;
 }
-#wrap .page-content #georesults #resultinfo {
+#georesults #resultinfo {
   width: 100%;
   margin: 10px auto 0 auto;
   color: #888;
-}
-#wrap .page-content .collapsed {
-  display: none
-}
-#wrap .page-content .add-more {
-  padding: 1em;
-  margin-top: 2em;
-  display: block;
-  text-align: center;
-  background-color: #DADADA;
-  font-weight: bold;
-}
-#wrap .page-content table {
-  width: 100%
-}
-#wrap .page-content table tr:nth-child(even) {
-  background: #eff1f3
-}
-#wrap .page-content table td {
-  padding: 3px 5px
-}
-#wrap .page-content code {
-  background: #EEEEEE;
-  padding: 3px;
-}
-#wrap .page-content pre {
-  background: #EEEEEE;
-  padding: 3px;
-}
-#wrap .page-content h3 {
-  margin-top: 20px
-}
-#wrap .page-content p {
-  margin-top: 10px
 }
 #wrap #page-title {
   border-bottom: 3px double #dfdfdf;
   padding-top: 48px;
   clear: both;
 }
-#wrap #page-links {
-  float: right
+
+/**
+ * Dataset page
+ */
+#wrap .page-content .dataset-table td {
+  width: 50%
 }
-#wrap #page-links a.active-page {
-  text-decoration: none;
-  font-weight: bold;
+#wrap .page-content .expand-dataset {
+  font-size: .5em
 }
-#wrap #page-links a {
-  margin-right: .5em
-}
-#wrap #page-links a:visited {
-  color: #00E
-}
-#wrap .loading {
-  padding: 1em;
-  margin-top: 2em;
-  text-align: center;
-  font-weight: bold;
-  background-color: #FFA64D;
-}
-#wrap #footer {
-  border-top: 3px double #dfdfdf;
-  padding-top: 24px;
-  margin-top: 48px;
-  margin-bottom: 48px;
-  clear: both;
-}
-#wrap .error {
-  padding: 1em;
-  margin-top: 2em;
-  text-align: center;
-  font-weight: bold;
-  background-color: #FF4D4D;
-}
-/* Utility */
-.clearfix {
-  display: inline-block
-}
-html[xmlns] .clearfix {
-  display: block
-}
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-* html .clearfix {
-  height: 1%
-}
-.hidden {
+#wrap .page-content .collapsed {
   display: none
 }
