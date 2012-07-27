@@ -173,8 +173,11 @@ h4 {
       background-color: #DADADA;
       font-weight: bold; }
   #wrap .loading {
+    padding: 1em;
+    margin-top: 2em;
     text-align: center;
-    font-weight: bold;}
+    font-weight: bold;
+    background-color: #FFA64D;}
 
 /* Utility */
 .clearfix:after {

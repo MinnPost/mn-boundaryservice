@@ -468,18 +468,30 @@ function stop_loading() {
 }
 
 function get_datasets() {
-    var sets_url = '/1.0/boundary-set/?limit=100';
+    var sets_url = '/1.0/boundary-set/?limit=10';
     var d;
     var output = [];
     
     // Check if we already loaded datasets
     if (datasets !== null) {
         return;
-    } 
+    }
+    
+    $('#datasets-results').html('');
+    get_datasets_paged(sets_url);
+}
+
+/**
+ * Recursive-like function to get paged datasets.
+ */
+function get_datasets_paged(url) {
+    var output = [];
+    start_loading();
+    $('#datasets-results .add-more').remove();
     
     // Go through all datasets.  There may be lots so lets push up
     // the limit.
-    $.getJSON(sets_url, function(r) {
+    $.getJSON(url, function(r) {
         if (typeof r.objects !== undefined) {
             datasets = r.objects;
             for (d in r.objects) {
@@ -502,23 +514,41 @@ function get_datasets() {
             output.push('<p>No data sets found.</p>');
         }
 
-        $('#datasets-results').html(output.join(' '));
+        // Display results
+        $('#datasets-results').append(output.join(' '));
+        
+        // Check for paging
+        if (r.meta.next !== undefined && r.meta.next !== '' && r.meta.next !== null) {
+          $('<a>Load more datasets</a>')
+            .attr('href', '#').addClass('add-more')
+            .click(function(e) {
+              e.preventDefault();
+              get_datasets_paged(r.meta.next);
+              $('#datasets-results').append('<p class="loading">Loading...</p>');
+          }).appendTo('#datasets-results');
+        }
         
         // Handle collapsing
-        $('.expand-dataset').click(function(e) {
-            e.preventDefault();
-            var $t = $(this).parent().parent().find('.table-container');
-            if ($t.hasClass('collapsed')) {
-                $t.slideDown();
-                $(this).html('collapse');
-            }
-            else {
-                $t.slideUp();
-                $(this).html('more info');
-            }
-            $t.toggleClass('collapsed');
+        $('.expand-dataset:not(.expand-processed)').each(function() {
+            $(this).addClass('expand-processed');
+            $(this).click(function(e) {
+                e.preventDefault();
+                
+                var $t = $(this).parent().parent().find('.table-container');
+                if ($t.hasClass('collapsed')) {
+                    $t.slideDown();
+                    $(this).html('less info');
+                }
+                else {
+                    $t.slideUp();
+                    $(this).html('more info');
+                }
+                $t.toggleClass('collapsed');
+            });
         });
-    });
+        
+        stop_loading();
+    }); 
 }
 
 $(document).ready(function() {
