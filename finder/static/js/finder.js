@@ -57,7 +57,12 @@ function init_map(lat, lng) {
           '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, ' +
           '<a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> ' +
           'and contributors.';
-        var tiles = new L.TileLayer(mapquestUrl, {maxZoom: 18, attribution: mapquestAttrib, subdomains: subDomains});
+        //var tiles = new L.TileLayer(mapquestUrl, {maxZoom: 18, attribution: mapquestAttrib, subdomains: subDomains});
+        
+        var stamenURL = 'http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.jpg';
+        var stamenDomains = ['a', 'b', 'c', 'd'];
+        var stamenAttr = 'Map tiles by <a target="_blank" href="http://stamen.com">Stamen Design</a>, under <a target="_blank" href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.';
+        var tiles = new L.TileLayer(stamenURL, {maxZoom: 18, attribution: stamenAttr, subdomains: stamenDomains});
         
         map.addLayer(tiles);
     }
