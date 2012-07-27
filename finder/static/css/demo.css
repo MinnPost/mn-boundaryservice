@@ -129,6 +129,19 @@ body #outside {
 /**
  * General styles for app.
  */
+a,
+a:visited,
+a:hover,
+a:visited:hover,
+a:focus {
+  color: #801019;
+  text-decoration: none;
+}
+a:hover,
+a:visited:hover,
+a:focus {
+  text-decoration: underline;
+}
 .page-content {
   display: none;
 }
@@ -137,11 +150,11 @@ body #outside {
   margin-top: 2em;
   display: block;
   text-align: center;
-  background-color: #DADADA;
+  background-color: #DFDFDF;
   font-weight: bold;
 }
 table tr:nth-child(even) {
-  background: #eff1f3
+  background: #EFF1F3
 }
 table td {
   padding: 3px 5px;
@@ -151,14 +164,16 @@ table td {
   margin-top: 2em;
   text-align: center;
   font-weight: bold;
-  background-color: #FFA64D;
+  background-color: #187CC3;
+  color: #FFFFFF;
 }
 .error {
   padding: 1em;
   margin-top: 2em;
   text-align: center;
   font-weight: bold;
-  background-color: #FF4D4D;
+  background-color: #E63342;
+  color: #FFFFFF;
 }
 
 /**
@@ -174,15 +189,12 @@ table td {
 #wrap #page-links a {
   margin-right: .5em
 }
-#wrap #page-links a:visited {
-  color: #00E
-}
 
 /**
  * Footer
  */
-#wrap #footer {
-  border-top: 3px double #dfdfdf;
+#footer {
+  border-top: 3px double #DFDFDF;
   padding-top: 24px;
   margin-top: 48px;
   margin-bottom: 48px;
@@ -193,7 +205,10 @@ table td {
  * Demo page
  */
 #boundaries .selected {
-  background: #6AAFBD
+  background: #7CC318;
+}
+#boundaries .selected a {
+  color: #FFFFFF;
 }
 #boundaries thead {
   display: none;
@@ -212,7 +227,7 @@ table td {
 }
 #form-wrapper #did-you-mean.highlight {
   background: #343434;
-  color: #fff;
+  color: #FFFFFF;
   padding: 5px;
 }
 #form-wrapper #use-current-location {
