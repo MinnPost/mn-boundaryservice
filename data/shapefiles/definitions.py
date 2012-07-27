@@ -412,5 +412,19 @@ SHAPEFILES = {
         'notes': 'This dataset was derived from the 2012 voting precincts dataset.',
         'encoding': '',
         'srid': ''
+    },
+    'Wards (2012)': {
+        'file': 'wards/2012-mn_sos/vtd2012_wards.shp',
+        'singular': 'Ward (2012)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['ward_id']),
+        'namer': utils.simple_namer(['ward_id']),
+        'authority': 'Minnesota Secretary of State',
+        'domain': 'Minnesota',
+        'last_updated': date(2012, 7, 24),
+        'href': 'http://www.gis.leg.mn/metadata/vtd2012.htm',
+        'notes': 'This dataset was derived from the 2012 voting precincts dataset.',
+        'encoding': '',
+        'srid': ''
     }
 }
