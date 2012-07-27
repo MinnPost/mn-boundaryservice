@@ -491,63 +491,72 @@ function get_datasets_paged(url) {
     
     // Go through all datasets.  There may be lots so lets push up
     // the limit.
-    $.getJSON(url, function(r) {
-        if (typeof r.objects !== undefined) {
-            datasets = r.objects;
-            for (d in r.objects) {
-                output.push('<div class="dataset-object">');
-                output.push('<h3>' + r.objects[d].name);
-                output.push('<a href="#" class="expand-dataset">more info</a>');
-                output.push('</h3>');
-                output.push('<div class="table-container collapsed"><table class="dataset-table"><tbody>');
-                output.push('<tr><td>Domain</td><td>' + r.objects[d].domain + '</td></tr>');
-                output.push('<tr><td>Boundary count</td><td>' + r.objects[d].count + '</td></tr>');
-                output.push('<tr><td>Source</td><td><a href="' + r.objects[d].href +'" target="_blank">' + r.objects[d].authority + '</a></td></tr>');
-                output.push('<tr><td>Resource URI</td><td><a href="' + r.objects[d].resource_uri +'">' + r.objects[d].resource_uri + '</a></td></tr>');
-                output.push('<tr><td>Last updated</td><td>' + r.objects[d].last_updated + '</td></tr>');
-                output.push('<tr><td>Notes</td><td>' + r.objects[d].notes + '</td></tr>');
-                output.push('</tbody></table></div>');
-                output.push('</div>');
+    $.ajax({
+        'url': url,
+        'dataType': 'json',
+        'success': function(r) {
+            if (typeof r.objects !== undefined) {
+                datasets = r.objects;
+                for (d in r.objects) {
+                    output.push('<div class="dataset-object">');
+                    output.push('<h3>' + r.objects[d].name);
+                    output.push('<a href="#" class="expand-dataset">more info</a>');
+                    output.push('</h3>');
+                    output.push('<div class="table-container collapsed"><table class="dataset-table"><tbody>');
+                    output.push('<tr><td>Domain</td><td>' + r.objects[d].domain + '</td></tr>');
+                    output.push('<tr><td>Boundary count</td><td>' + r.objects[d].count + '</td></tr>');
+                    output.push('<tr><td>Source</td><td><a href="' + r.objects[d].href +'" target="_blank">' + r.objects[d].authority + '</a></td></tr>');
+                    output.push('<tr><td>Resource URI</td><td><a href="' + r.objects[d].resource_uri +'">' + r.objects[d].resource_uri + '</a></td></tr>');
+                    output.push('<tr><td>Last updated</td><td>' + r.objects[d].last_updated + '</td></tr>');
+                    output.push('<tr><td>Notes</td><td>' + r.objects[d].notes + '</td></tr>');
+                    output.push('</tbody></table></div>');
+                    output.push('</div>');
+                }
             }
-        }
-        else {
-            output.push('<p>No data sets found.</p>');
-        }
-
-        // Display results
-        $('#datasets-results').append(output.join(' '));
-        
-        // Check for paging
-        if (r.meta.next !== undefined && r.meta.next !== '' && r.meta.next !== null) {
-          $('<a>Load more datasets</a>')
-            .attr('href', '#').addClass('add-more')
-            .click(function(e) {
-              e.preventDefault();
-              get_datasets_paged(r.meta.next);
-              $('#datasets-results').append('<p class="loading">Loading...</p>');
-          }).appendTo('#datasets-results');
-        }
-        
-        // Handle collapsing
-        $('.expand-dataset:not(.expand-processed)').each(function() {
-            $(this).addClass('expand-processed');
-            $(this).click(function(e) {
-                e.preventDefault();
-                
-                var $t = $(this).parent().parent().find('.table-container');
-                if ($t.hasClass('collapsed')) {
-                    $t.slideDown();
-                    $(this).html('less info');
-                }
-                else {
-                    $t.slideUp();
-                    $(this).html('more info');
-                }
-                $t.toggleClass('collapsed');
+            else {
+                output.push('<p>No data sets found.</p>');
+            }
+    
+            // Display results
+            $('#datasets-results').append(output.join(' '));
+            
+            // Check for paging
+            if (r.meta.next !== undefined && r.meta.next !== '' && r.meta.next !== null) {
+              $('<a>Load more datasets</a>')
+                .attr('href', '#').addClass('add-more')
+                .click(function(e) {
+                  e.preventDefault();
+                  get_datasets_paged(r.meta.next);
+                  $('#datasets-results').append('<p class="loading">Loading...</p>');
+              }).appendTo('#datasets-results');
+            }
+            
+            // Handle collapsing
+            $('.expand-dataset:not(.expand-processed)').each(function() {
+                $(this).addClass('expand-processed');
+                $(this).click(function(e) {
+                    e.preventDefault();
+                    
+                    var $t = $(this).parent().parent().find('.table-container');
+                    if ($t.hasClass('collapsed')) {
+                        $t.slideDown();
+                        $(this).html('less info');
+                    }
+                    else {
+                        $t.slideUp();
+                        $(this).html('more info');
+                    }
+                    $t.toggleClass('collapsed');
+                });
             });
-        });
-        
-        stop_loading();
+            
+            stop_loading();
+        },
+        'error': function(jqXHR, textStatus, errorThrown) {
+            stop_loading();
+            $('#datasets-results').append(
+              '<p class="error">Error loading data (' + textStatus + ', ' + errorThrown + ')</p>');
+        }
     }); 
 }
 

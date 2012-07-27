@@ -178,6 +178,12 @@ h4 {
     text-align: center;
     font-weight: bold;
     background-color: #FFA64D;}
+  #wrap .error {
+    padding: 1em;
+    margin-top: 2em;
+    text-align: center;
+    font-weight: bold;
+    background-color: #FF4D4D;}
 
 /* Utility */
 .clearfix:after {
