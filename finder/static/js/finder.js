@@ -26,14 +26,20 @@ else {
 
 var place = (typeof finder_settings.EXAMPLE_PLACE != 'undefined') ? finder_settings.EXAMPLE_PLACE : 'Example Place';
 
-var map = null;
+var boundaryStyle = {
+    'color': '#197F10',
+    'weight': 3,
+    'opacity': 0.9,
+    'fill': true,
+    'fillColor': "#7CC318",
+    'fillOpacity': 0.5
+};
 
+var map = null;
 var user_marker = null;
 var displayed_slug = null;
 var displayed_polygon = null;
-
 var boundaries = new Array();
-
 var datasets = null;
 
 function init_map(lat, lng) {
@@ -181,7 +187,7 @@ function alt_addresses(results) {
 
     keep = new Array();
 
-    $.each(results, function(i,val) {
+    $.each(results, function(i, val) {
         if (i==0) return; // skip the first result
 
         for (var t in val.types) {
@@ -314,14 +320,7 @@ function display_boundary(slug, no_fit) {
         });
     });
 
-    displayed_polygon = new L.Polygon(paths, {
-        color: "#244f79",
-        opacity: 0.8,
-        weight: 3,
-        fill: true,
-        fillColor: "#244f79",
-        fillOpacity: 0.2
-    });
+    displayed_polygon = new L.Polygon(paths, boundaryStyle);
 
     displayed_slug = slug;
     map.addLayer(displayed_polygon);
