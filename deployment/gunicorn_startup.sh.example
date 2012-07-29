@@ -30,5 +30,8 @@ test -d $LOGDIR || mkdir -p $LOGDIR
 # Start gunicorn for django
 exec $VIRTENVDIR/gunicorn_django -w $NUM_WORKERS \
     -b $ADDRESS \
-    --user=$USER --log-level=debug \
-    --log-file=$LOGFILE 2>>$LOGFILE
+    --user=$USER \
+    --log-level=debug \
+    --log-file=$LOGFILE \
+    --timeout=90 \
+    2>>$LOGFILE
