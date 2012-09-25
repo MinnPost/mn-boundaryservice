@@ -344,7 +344,7 @@ SHAPEFILES = {
     },
     # Will take awhile
     'Voting precincts (2012)': {
-        'file': 'voting-precincts/2012-mn_sos/vtd2012_primary_rev20120720.shp',
+        'file': 'voting-precincts/2012-mn_sos/vtd2012_primary_rev20120808.shp',
         'singular': 'Voting precinct (2012)',
         'kind_first': False,
         'ider': utils.simple_namer(['vtd']),
