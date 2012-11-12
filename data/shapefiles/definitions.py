@@ -131,16 +131,16 @@ SHAPEFILES = {
         'srid': ''
     },
     'Counties (2010)': {
-        'file': 'counties/2010-ire-census/mn-counties-tl_2010_27_county10.shp',
+        'file': 'counties/2010-mn-gis-leg/county2010.shp',
         'singular': 'County (2010)',
         'kind_first': False,
-        'ider': utils.simple_namer(['geoid10']),
-        'namer': utils.simple_namer(['name10'], normalizer=lambda x: x.lstrip('0')),
-        'authority': 'U.S. Census Bureau (via IRE)',
+        'ider': utils.simple_namer(['data'], normalizer=lambda x: x.lstrip('0')),
+        'namer': utils.simple_namer(['data'], normalizer=lambda x: x.lstrip('0')),
+        'authority': 'Minnesota Legislative Coordinating Commission - GIS Office',
         'domain': 'Minnesota',
-        'last_updated': date(2012, 6, 22),
-        'href': 'http://census.ire.org/data/bulkdata.html',
-        'notes': '',
+        'last_updated': date(2012, 11, 12),
+        'href': 'http://www.gis.leg.mn/metadata/county2010.htm',
+        'notes': 'The County ID used is the Minnesota count code, as opposed to the Census code.',
         'encoding': '',
         'srid': ''
     },
