@@ -440,5 +440,33 @@ SHAPEFILES = {
         'notes': 'This dataset was was altered to create unique descriptive IDs for each neighborhood for better referencing.',
         'encoding': '',
         'srid': ''
+    },
+    'St. Paul District Councils (2012)': {
+        'file': 'neighborhoods/2012-st-paul-district-councils/District_Councils.shp',
+        'singular': 'St. Paul District Council (2012)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['DISTRICT']),
+        'namer': utils.simple_namer(['DISTRICT']),
+        'authority': 'City of St. Paul',
+        'domain': 'Minnesota',
+        'last_updated': date(2013, 6, 4),
+        'href': 'http://stpaul.gov/index.aspx?nid=4836',
+        'notes': 'This data was requested via email.',
+        'encoding': '',
+        'srid': ''
+    },
+    'St. Paul District Councils (2014)': {
+        'file': 'neighborhoods/2014-st-paul-district-councils/District_CouncilsNew2014.shp',
+        'singular': 'St. Paul District Council (2014)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['DISTRICT']),
+        'namer': utils.simple_namer(['DISTRICT']),
+        'authority': 'City of St. Paul',
+        'domain': 'Minnesota',
+        'last_updated': date(2013, 6, 4),
+        'href': 'http://stpaul.gov/index.aspx?nid=4836',
+        'notes': 'This data was requested via email.',
+        'encoding': '',
+        'srid': ''
     }
 }
