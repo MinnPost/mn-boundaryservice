@@ -426,5 +426,19 @@ SHAPEFILES = {
         'notes': 'This dataset was derived from the 2012 voting precincts dataset.',
         'encoding': '',
         'srid': ''
+    },
+    'Minneapolis Neighborhoods (2013)': {
+        'file': 'neighborhoods/2013-minneapolis-neighborhoods/minneapolis-neighborhoods-2013.shp',
+        'singular': 'Minneapolis Neighborhood (2013)',
+        'kind_first': False,
+        'ider': utils.simple_namer(['neighbor_1']),
+        'namer': utils.simple_namer(['neighborho']),
+        'authority': 'City of Minneapolis',
+        'domain': 'Minnesota',
+        'last_updated': date(2013, 6, 4),
+        'href': 'http://www.minneapolismn.gov/maps/about_maps_public-maps-links',
+        'notes': 'This dataset was was altered to create unique descriptive IDs for each neighborhood for better referencing.',
+        'encoding': '',
+        'srid': ''
     }
 }
