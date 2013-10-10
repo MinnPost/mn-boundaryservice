@@ -142,6 +142,7 @@ LOGGING = {
     'handlers': {
         'mail_admins': {
             'level': 'ERROR',
+            'filters': [],
             'class': 'django.utils.log.AdminEmailHandler'
         }
     },
@@ -162,6 +163,13 @@ CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
     }
+}
+
+
+BOUNDARY_SERVICE_THROTTLE = {
+    "timeframe": 60,  # timeframe to consider for throttling. In seconds
+    "throttle_at": 100,  # number of requests in the timeframe before blocking
+    "expiration": 3600  # How long to cache records of client requests
 }
 
 # Demo and site text values

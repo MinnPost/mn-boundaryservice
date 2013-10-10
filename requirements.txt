@@ -1,6 +1,6 @@
-django==1.4
+django==1.5.4
 psycopg2==2.4.1
 django_compressor==1.1
-geopy==0.94.2
-django-boundaryservice>=0.1.11
-gunicorn>=0.14
+geopy==0.95.1
+https://github.com/newsapps/django-boundaryservice/archive/v0.2.2.zip
+gunicorn>=0.18
