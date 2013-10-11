@@ -7,7 +7,7 @@ from django.conf import settings
 
 class simple_index_namer():
     """
-    Name features with a joined combination of attributes, optionally passing 
+    Name features with a joined combination of attributes, optionally passing
     the result through a normalizing function.  Adds an additonal suffix if
     multiple values are used.
     """
@@ -20,20 +20,20 @@ class simple_index_namer():
     def __call__(self, feature):
         attribute_values = map(str, map(feature.get, self.attribute_names))
         name = self.seperator.join(attribute_values).strip()
-        
+
         if self.normalizer:
             normed = self.normalizer(name)
             if not normed:
                 raise ValueError('Failed to normalize \"%s\".' % name)
             else:
                 name = normed
-        
+
         # Check if found already
         if name in self.found:
           self.found[name] = self.found[name] + 1
           name = name + self.seperator + str(self.found[name])
         else:
           self.found[name] = 0
-          
+
         return name
 

@@ -42,6 +42,7 @@ Add your geospatial data to `data/shapefiles`. It may be a zipfile or a director
 Then, run `python manage.py loadshapefiles`. Note that this command will import everything under `data/shapefiles`. If you're already run this command once, then you'll want to specify which data to import. You can include (whitelist) data for import:
 
     python manage.py loadshapefiles -o KeyA,KeyB,...
+    python manage.py loadshapefiles -o "Censustracts(2011)","Blah.Blah.()"
 
 Or exclude (blacklist) data for import:
 
