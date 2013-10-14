@@ -73,6 +73,10 @@ var finder_settings = {{ json_settings|safe }};
 <script src="{{ STATIC_URL }}js/finder.js"></script>
 {% endcompress %}
 
+<script type="text/javascript">
+  L.Icon.Default.imagePath = '{{ STATIC_URL }}leaflet/images';
+</script>
+
 {% if settings.ENABLE_GOOGLE_ANALYTICS and settings.GOOGLE_ANALYTICS_KEY %}
 <script type="text/javascript">
   var _gaq = _gaq || [];
