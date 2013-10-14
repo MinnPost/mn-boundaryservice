@@ -164,6 +164,22 @@ Add the following to `/etc/default/varnish`.
 
 Restart varnish with `sudo /etc/init.d/varnish restart`
 
+#### Tuning Postgres (optional)
+
+First [update](http://www.postgresql.org/docs/9.0/static/kernel-resources.html) the `SHMMAX`.
+
+    sudo cp /etc/sysctl.conf /etc/sysctl.conf.orig
+    sudo nano /etc/sysctl.conf
+    (add line, where this is 256MB in bytes and it should be able 25% of total memory) kernel.shmmax = 268435456
+
+Update Postgres config (reference [here](http://workshops.boundlessgeo.com/postgis-intro/tuning.html)).
+
+    sudo cp /etc/postgresql/9.1/main/postgresql.conf /etc/postgresql/9.1/main/postgresql.conf.orig
+    sudo nano /etc/postgresql/9.1/main/postgresql.conf
+    (update according to memory) shared_buffers = 150MB
+    (update) work_mem = 10MB
+    sudo /etc/init.d/postgresql restart
+
 ## Troubleshooting
 
 If `python manage.py runserver` quits unexpectedly without error, use an alternative server:
