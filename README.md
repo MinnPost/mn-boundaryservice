@@ -110,6 +110,8 @@ Follow the general install instructions above.  Some helpful configuration value
 * set `COMPRESS_ENABLED = True`
 * set `API_DOMAIN`
 
+run `python manage.py collectstatic`.
+
 ### Configure services
 
 Copy and configure Gunicorn startup script:
@@ -145,15 +147,22 @@ From the [install Varnish on Ubuntu instructions](https://www.varnish-cache.org/
 
 Update NGINX to use port 8080.
 
-   sudo nano /etc/nginx/sites-available/boundaryservice.minnpost.com;
+   sudo nano /etc/nginx/sites-available/boundaries.minnpost.com;
    sudo /etc/init.d/nginx restart;
 
 Configure by copying provided Varnish config.  Update values as needed.
 
     sudo cp /etc/varnish/default.vcl /etc/varnish/default.vcl.orig;
-    sudo cp deployment/default.vcl.example /etc/nginx/sites-available/boundaries.minnpost.com;
+    sudo cp deployment/default.vcl.example /etc/varnish/default.vcl;
+    sudo nano /etc/varnish/default.vcl;
 
-Add `DAEMON_OPTS="-a :80` to `/etc/default/varnish`.  Restart varnish with `sudo /etc/init.d/varnish restart`
+Add the following to `/etc/default/varnish`.
+
+    DAEMON_OPTS="-a :80 \
+        -b localhost:8080 \
+        -T localhost:6082"
+
+Restart varnish with `sudo /etc/init.d/varnish restart`
 
 ## Troubleshooting
 
