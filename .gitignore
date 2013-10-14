@@ -2,7 +2,7 @@
 *.swp
 .venv
 .DS_Store
-boundaryservice
+logs
 settings_override.py
 gunicorn_startup.sh
 /static
