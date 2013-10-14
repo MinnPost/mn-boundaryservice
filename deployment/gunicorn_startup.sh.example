@@ -12,8 +12,8 @@
 set -e
 
 # Update the following as needed
-LOGFILE=/var/log/gunicorn/boundaryservice.log
-APPDIR=/home/ubuntu/django-projects/mn-boundaryservice
+LOGFILE=/home/ubuntu/mn-boundaryservice/logs/boundaryservice.log
+APPDIR=/home/ubuntu/mn-boundaryservice
 VIRTENVDIR=boundaryservice/bin
 NUM_WORKERS=3
 USER=ubuntu
@@ -21,14 +21,15 @@ ADDRESS=127.0.0.1:8000
 
 # Load virtual environment
 cd $APPDIR
-source $VIRTENVDIR/activate
+#source $VIRTENVDIR/activate
 
 # Ensure log file is available
 LOGDIR=$(dirname $LOGFILE)
 test -d $LOGDIR || mkdir -p $LOGDIR
 
 # Start gunicorn for django
-exec $VIRTENVDIR/gunicorn_django -w $NUM_WORKERS \
+#exec $VIRTENVDIR/gunicorn_django -w $NUM_WORKERS \
+exec gunicorn_django -w $NUM_WORKERS \
     -b $ADDRESS \
     --user=$USER \
     --log-level=debug \

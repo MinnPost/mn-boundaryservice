@@ -1,86 +1,161 @@
-The Newsapps Boundary Service is a ready-to-deploy system for aggregating regional boundary data (from shapefiles) and republishing via a RESTful JSON API. It is packaged as a pluggable Django application so that it can be easily integrated into any project.
+# Minnesota Boundary Service
 
-This project allows you to easily create sites like [You are here.](http://boundaries.tribapps.com/) and [Smith County Boundaries](http://boundaryservice.hacktyler.com/).
+A REST API for determing what boundaries (administrative, political, etc) a location is in for the state of Minnesota.
 
-# Getting Started
+Forked from OpenNorth [boundary service](https://github.com/opennorth/blank-boundaryservice).  Deployed at [boundaries.minnpost.com](http://boundaries.minnpost.com/).
+
+## Install
 
 First, install the requirements. This assumes you already have Python 2.7.
 
-    sudo easy_install pip
-    sudo pip install virtualenv
-    virtualenv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
+1. Install pip: `sudo easy_install pip`
+1. (optional) Use a virtual environement: `sudo pip install virtualenv && virtualenv .venv && source .venv/bin/activate`
+1. Install python libraries: `pip install -r requirements.txt`
 
-Next, create a PostgreSQL database, as the Boundary Service depends on PostGIS.
+### Database
 
-    DB=EXAMPLE_DB_NAME
-    createdb -h localhost $DB
-    createlang -h localhost plpgsql $DB
+Next, create a PostGIS database, as the Boundary Service depends on PostGIS.
 
-To spatially-enable the database, you must load PostGIS definitions files. You can use `locate` (Linux) or `mdfind` (OS X) to find these files.
-
-    psql -h localhost -d $DB -f postgis.sql
-    psql -h localhost -d $DB -f spatial_ref_sys.sql
-
-It may be worthwhile to [create a template database](http://www.bigfastblog.com/landsliding-into-postgis-with-kml-files) if you will be creating many PostGIS databases.
+### Application settings
 
 Lastly, configure the `DATABASES` Django setting and and create the database tables.
 
-    cp settings_override.py.example settings_override.py
-    vi settings_override.py
-    python manage.py syncdb
+1. Copy example settings: `cp settings_override.py.example settings_override.py`
+1. Put in the appropriate database setting: `nano settings_override.py`
+1. Initial database: `python manage.py syncdb`
 
-You can now copy `definitions.py.example` to start adding your geospatial data:
+### Load boundary sets
 
-    cp data/shapefiles/definitions.py.example data/shapefiles/definitions.py
+The following will load all the boundary sets (and duplicate any existing ones).  See below for individual addition and deletions.
 
-# Adding geospatial data
+1. `python manage.py loadshapefiles`
 
-Add your geospatial data to `data/shapefiles`. It may be a zipfile or a directory containing a shp, shx, dbf, prj. Then, fill in `definitions.py`. Note that the keys of the `SHAPEFILES` dictionary and the value of the `singular` key should be ASCII.
+## Adding and managing boundary sets
 
-Then, run `python manage.py loadshapefiles`. Note that this command will import everything under `data/shapefiles`. If you're already run this command once, then you'll want to specify which data to import. You can include (whitelist) data for import:
+### Adding a boundary set
 
-    python manage.py loadshapefiles -o KeyA,KeyB,...
-    python manage.py loadshapefiles -o "Censustracts(2011)","Blah.Blah.()"
+1. Find boundary dataset.  This should be a unzipped shapefile directory (specifically with a .shp file).
+1. You may need to alter the dataset to ensure the best IDs or something like that, but the goal should be to alter the original dataset as little as possible.
+1. This should go into a subject directory in `data/shapefiles` and then within a directory named by year and source.  For instance: `data/shapefiles/counties/2010-mn-gis-leg/data.shp`
+1. Update the `data/shapefiles/definitions.py` file with the appropriate data.  Please follow the conventions that exist in the current definitions.
+    * **The `namer` field is what will be used for the slug and should be the idtenfier for the data.  This should be the most universal and common identifer that can be used.**
+1. Update database with new set by running: `python manage.py loadshapefiles -o "Censustracts(2011)","Blah.Blah.()"`
+    * The comma-separated arguments are the keys of the `SHAPEFILES` dictionary with spaces removed.
 
-Or exclude (blacklist) data for import:
+### Listing boundary sets
 
-    python manage.py loadshapefiles -e KeyA,KeyB,...
+To list the boundary sets:
 
-__Important Note:__ The comma-separated arguments are the keys of the `SHAPEFILES` dictionary with spaces removed.
+    python data/shapefiles/list_sets.py
 
-If you want to reset the database and start over, run:
+### Removing boundary datasets
 
-    python manage.py loadshapefiles -c
-
-If that doesn't work you can always do:
+If you need to remove all datasets and reload all of them, use the following:
 
     python manage.py sqlreset boundaryservice | psql -h localhost DB_NAME
+    python manage.py syncdb
 
-# Development
+You can remove a specific dataset with the something like the following.  Get the boundary set ID with the boundary listing script.
+
+    python data/shapefiles/remove_set.py
+
+## Development
 
 To test it locally:
 
     python manage.py runserver
     curl http://127.0.0.1:8000/1.0/
 
-# Customization
+## Deployment
 
-To localize the sample boundary sets, etc. edit these two files:
+Production deployment is aimed at an Ubunutu server on EC2.
 
-* Go through the `@todo` in `finder.js`
-* Edit `EXAMPLE_*` in `settings_override.py`
+### Server libraries
 
-# Deployment
+    sudo apt-get update
+    sudo apt-get install git-core python-setuptools python-dev build-essential nginx binutils gdal-bin libproj-dev python-psycopg2
+    sudo apt-get install postgresql-9.1-postgis postgresql-server-dev-9.1
+    sudo easy_install pip
 
-In `settings_override.py`:
+### Database
+
+Setup postgres password:
+
+    sudo -u postgres psql postgres
+
+Following [this documentation](https://wiki.archlinux.org/index.php/PostGIS) to set up postgis:
+
+    sudo su - postgres
+    createdb -E UTF8 template_postgis
+    createlang plpgsql template_postgis
+    psql -d postgres -c "UPDATE pg_database SET datistemplate='true' WHERE datname='template_postgis';"
+    psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-1.5/postgis.sql
+    psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-1.5/spatial_ref_sys.sql
+
+Create specific database and user for our default user.  Change as needed.
+
+    createdb -U postgres -h localhost -T template_postgis mn_boundaryservice
+    psql -U postgres -h localhost mn_boundaryservice
+    psql> CREATE USER ubuntu;
+    psql> GRANT ALL PRIVILEGES ON DATABASE mn_boundaryservice TO ubuntu;
+    psql> GRANT ALL ON TABLE spatial_ref_sys TO ubuntu;
+    psql> GRANT ALL ON TABLE geometry_columns TO ubuntu;
+    psql> ALTER USER ubuntu WITH PASSWORD '<your_pass_here>';
+
+### Install application
+
+Follow the general install instructions above.  Some helpful configuration values in `settings_override.py`:
 
 * configure `CACHES`
 * set `COMPRESS_ENABLED = True`
 * set `API_DOMAIN`
 
-# Troubleshooting
+### Configure services
+
+Copy and configure Gunicorn startup script:
+
+    cp deployment/gunicorn_startup.sh .example gunicorn_startup.sh ;
+    chmod +x gunicorn_startup.sh;
+    nano gunicorn_startup.sh;
+
+Copy and configure the Upstart script:
+
+    sudo cp deployment/boundaryservice.conf.example /etc/init/boundaryservice.conf;
+    sudo nano /etc/init/boundaryservice.conf;
+
+To start the application, run the following:
+
+    sudo start boundaryservice;
+
+Set up NGINX for web serving.  Update values as needed.
+
+    sudo cp deployment/boundaries.minnpost.com.nginx.example /etc/nginx/sites-available/boundaries.minnpost.com;
+    sudo ln -s /etc/nginx/sites-available/boundaries.minnpost.com /etc/nginx/sites-enabled/boundaries.minnpost.com;
+    sudo rm /etc/nginx/sites-enabled/default
+    sudo /etc/init.d/nginx restart;
+
+#### Set up Varnish (Optional)
+
+From the [install Varnish on Ubuntu instructions](https://www.varnish-cache.org/installation/ubuntu).  Currently the varnish cache is set to never expire, so when adding new data or changing the data, make sure to clear the varnish cache.
+
+1. `sudo curl http://repo.varnish-cache.org/debian/GPG-key.txt | sudo apt-key add -`
+1. Edit `/etc/apt/sources.list` and add new line with `deb http://repo.varnish-cache.org/ubuntu/ lucid varnish-3.0`
+1. `sudo apt-get update`
+1. `sudo apt-get install varnish`
+
+Update NGINX to use port 8080.
+
+   sudo nano /etc/nginx/sites-available/boundaryservice.minnpost.com;
+   sudo /etc/init.d/nginx restart;
+
+Configure by copying provided Varnish config.  Update values as needed.
+
+    sudo cp /etc/varnish/default.vcl /etc/varnish/default.vcl.orig;
+    sudo cp deployment/default.vcl.example /etc/nginx/sites-available/boundaries.minnpost.com;
+
+Add `DAEMON_OPTS="-a :80` to `/etc/default/varnish`.  Restart varnish with `sudo /etc/init.d/varnish restart`
+
+## Troubleshooting
 
 If `python manage.py runserver` quits unexpectedly without error, use an alternative server:
 
@@ -105,11 +180,7 @@ If `python manage.py loadshapefiles` causes this error:
 
 make sure that all files referenced in `definitions.py` exist.
 
-# Contributing
-
-* [Newsapps Boundary Services issues](https://github.com/newsapps/django-boundaryservice/issues?sort=created&direction=desc&state=open)
-
-# Attribution
+## Attribution
 
 This Boundary Service instance uses the following open-source software:
 
