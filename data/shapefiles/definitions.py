@@ -469,6 +469,36 @@ SHAPEFILES = {
         'srid': ''
     },
 
+    # Minneapolis Parks and Recreation districts
+    'Minneapolis Parks and Recreation districts (2012)': {
+        'file': 'parks-recreation-districts/2012-minneapolis-parks-recreation/2012_CommDist_Redistricting_ALL.shp',
+        'singular': 'Minneapolis Parks and Recreation district (2012)',
+        'kind_first': False,
+        'ider': processing.simple_index_namer(['mplspark']),
+        'namer': processing.simple_index_namer(['mplspark']),
+        'authority': 'Minneapolis Parks and Recreation Board',
+        'domain': 'Minnesota',
+        'last_updated': date(2013, 10, 17),
+        'href': 'http://www.minneapolisparks.org/default.asp?PageID=1005',
+        'notes': 'Recieved via email from the Minneapolis Parks and Recreation Board.',
+        'encoding': '',
+        'srid': ''
+    },
+    'Minneapolis Parks and Recreation districts (2014)': {
+        'file': 'parks-recreation-districts/2014-minneapolis-parks-recreation/2014-minneapolis-parks-recreation.shp',
+        'singular': 'Minneapolis Parks and Recreation district (2014)',
+        'kind_first': False,
+        'ider': processing.simple_index_namer(['id']),
+        'namer': processing.simple_index_namer(['id']),
+        'authority': 'Minneapolis Parks and Recreation Board',
+        'domain': 'Minnesota',
+        'last_updated': date(2013, 10, 17),
+        'href': 'http://www.minneapolisparks.org/default.asp?PageID=1005',
+        'notes': 'Compiled manually from multiple shapefiles recieved via email from the Minneapolis Parks and Recreation Board.',
+        'encoding': '',
+        'srid': ''
+    },
+
     # Census places
     #'Census places (2011)': {
     #    'file': 'census-places/2011-census/tl_2011_27_place.shp',
