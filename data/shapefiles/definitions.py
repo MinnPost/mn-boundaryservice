@@ -498,6 +498,20 @@ SHAPEFILES = {
         'encoding': '',
         'srid': ''
     },
+    'Minnesota State (2014)': {
+        'file': 'state-mn/2014-mndot/mn-state.shp',
+        'singular': 'Minnesota State (2014)',
+        'kind_first': False,
+        'ider': processing.simple_index_namer(['STATE_FIPS']),
+        'namer': processing.simple_index_namer(['STATE_FIPS']),
+        'authority': 'Minnesota Department of Transportation',
+        'domain': 'Minnesota',
+        'last_updated': date(2014, 7, 30),
+        'href': 'http://www.dot.state.mn.us/maps/gdma/gis-data.html',
+        'notes': 'Manually reprojected with ogr2ogr mn-state.shp state.shp -s_srs EPSG:26915 -t_srs EPSG:4326',
+        'encoding': '',
+        'srid': ''
+    },
 
     # Census places
     #'Census places (2011)': {
