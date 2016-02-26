@@ -1,6 +1,15 @@
 server {
-  listen 80;
+  listen 8080;
   server_name boundaries.minnpost.com;
+  return 301 https://$server_name$request_uri;
+}
+
+server {
+  listen 443 ssl;
+  server_name boundaries.minnpost.com;
+  ssl on;
+  ssl_certificate /etc/nginx/ssl/wildcard.minnpost.com.crt;
+  ssl_certificate_key /etc/nginx/ssl/wildcard.minnpost.com.key;
   root /home/ubuntu/mn-boundaryservice;
 
   location /static {
@@ -22,6 +31,10 @@ server {
     proxy_connect_timeout 30;
     proxy_read_timeout 30;
     proxy_pass http://localhost:8000/;
+    #new
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header X-Forwarded-Port 443;
     expires max;
   }
 
