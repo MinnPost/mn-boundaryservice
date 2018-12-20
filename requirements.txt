@@ -1,6 +1,6 @@
 django==1.5.4
 django_compressor==1.1
-django-heroku==0.3.1
+django-heroku="*"
 geopy==0.95.1
 https://github.com/zzolo/django-boundaryservice/archive/master.zip
 gunicorn>=0.18
