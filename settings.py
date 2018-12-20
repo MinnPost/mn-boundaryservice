@@ -1,5 +1,6 @@
 import os
 import django
+import django_heroku
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
@@ -11,7 +12,7 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Alan Palazzolo', 'apalazzolo@minnpost.com'),
+    ('MinnPost Tech', 'tech@minnpost.com'),
 )
 
 MANAGERS = ADMINS
@@ -249,6 +250,5 @@ try:
 except ImportError:
     pass
 
-# Configure Django App for Heroku.
-import django_heroku
+# Activate Django-Heroku
 django_heroku.settings(locals())
