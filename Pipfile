@@ -6,7 +6,7 @@ verify_ssl = true
 [packages]
 django = "==1.5.4"
 django_compressor = "==1.1"
-django-heroku = "*"
+dj-database-url = "*"
 geopy = "==0.95.1"
 gunicorn = ">=0.18"
 psycopg2 = "==2.7.1"

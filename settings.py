@@ -1,6 +1,5 @@
 import os
 import django
-import django_heroku
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
@@ -249,6 +248,3 @@ try:
     from settings_override import *
 except ImportError:
     pass
-
-# Activate Django-Heroku
-django_heroku.settings(locals())
