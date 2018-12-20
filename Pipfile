@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+django = "==1.5.4"
+django_compressor = "==1.1"
+django-heroku = "*"
+geopy = "==0.95.1"
+gunicorn = ">=0.18"
+psycopg2 = "==2.7.1"
+
+[requires]
+python_version = "2.7.15"
+
+[dev-packages]
